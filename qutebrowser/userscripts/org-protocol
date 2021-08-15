@@ -1,0 +1,14 @@
+#!/bin/bash
+
+PROTOCOL="$1"
+TEMPLATE="$2"
+QUTE_URL=$(echo "$QUTE_URL" | tr -d '\n' | jq -sRr @uri )
+
+OUT="org-protocol://$PROTOCOL?"
+if [[ "$PROTOCOL" == "capture" ]]; then
+   OUT+="template=$TEMPLATE"
+   OUT+="&"
+fi
+
+OUT+="url=$QUTE_URL&title=$QUTE_TITLE&body=$QUTE_SELECTED_TEXT"
+xdg-open "$OUT"

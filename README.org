@@ -1,0 +1,103 @@
+#+TITLE: AB/dotfiles -- a personal config repo.
+
+This repo provides a brief description and actually keeps my customized personal machine configuration (so that I could rebuild it quickly if necessary).
+
+There are several folders relevant to the config, to keep everything tidy:
+
+ | Folder                     | Description                             |
+ |----------------------------+-----------------------------------------|
+ | .config/                   | All config files and aux scripts        |
+ | ⎣ spacemacs.d/             | Emacs configuration                     |
+ | ⎣ cdg_paths                | User dir bookmarks                      |
+ | ⎣ abtools/                 | Various my command-line tools / scripts |
+ | ⎣ ...                      | (everything else)                       |
+ | distrib/                   | Downloaded and installed programs       |
+ | .screenlayout/             | Screen layouts for =arandr=             |
+ | .local/bin/                | Symlinks to user-level executable files |
+ | .icons/                    | Icons folder                            |
+ | .themes/                   | Theme folder                            |
+ | .fonts/                    | Fonts folder                            |
+ | .mail/                     | Mail storage                            |
+ | .local/share/applications/ | Apps' =.desktop= files                  |
+ | Downloads/                 | Download folder (temporary)             |
+
+ The following files are symlinked to the originals in =.config= folder: =.vimrc=, =.spacemacs=, =.mbsyncrc=, =.msmtprc=, =.Xmodmap=, =.Xresources=, =.xsession=, =.xsessionrc=, =.zlogin=, =.Renviron=, =.julia/config/startup.jl=.
+ 
+App sources in the description below are annotated as follows:
+ | Source  | Description                       |
+ |---------+-----------------------------------|
+ | distro  | Debian repositories               |
+ | git     | Official git repo                 |
+ | release | (Binary) release from the website |
+ | snap    | Well, snap.                       |
+  
+* Research and development stack
+  Obviously, aside from Emacs, I use the following tools:
+  - Zotero and Zotero-connector (release) for literature management 
+  - org-roam (git) for extensive notes within Emacs
+  - texlive (distro)
+  - inkscape (distro)
+  - R, cpp (distro)
+  - julia (release)
+  - python (conda)
+  - gurobi solver (release)
+  - zeal (git) for offline docs
+  - freeplane (release) for wonderful mind-mapping
+  - xournalpp (distro) for drawing/teaching
+
+** Webdev stack
+   - hugo static website generator (downloaded =.tar.gz= from off website)
+   - Emacs-based development
+   - =ox-hugo= to export from =org= to Hugo =md=.
+
+* General-purpose toolbox
+** i3wm- and (partially) GNOME-based environment
+   - i3-gaps (git)
+   - compton (distro)
+   - i3status-rust (git)
+   - rofi (distro; rofi-emoji/rofi-unicode from git)
+   - pass, fzf (distro)
+   - quick custom "open" menu for rofi: myrmidon (git)
+   - printing: CUPS
+   - bluetooth: blueman
+   - wifi: nm-applet / network-manager-gnome (distro)
+
+** Spacemacs-based setup
+   - Emacs (git, built from source)
+   - Spacemacs (git, development branch)
+     
+** Web browser
+   - qutebrowser (git)
+   - firefox, chromium (distro); if something doesn't work in qute
+
+** Email stack (in Emacs)
+    - isync (mbsync) (distro)
+    - mu and mu4e (release)
+    - =org-msg= mode for HTML emails
+    - GPG (distro)
+
+** Other utils
+   - shell: zsh + OhMyZsh
+   - terminal: alacritty, urxvt
+   - PDF: zathura, evince
+   - images: sxiv, feh, gthumb, gimp
+   - file mgt: ranger, spacefm
+   - photo: digikam
+   - music: pulse, mpd, mpc, and ncmpcpp
+   - other media: vlc
+   - various text format-related conversions: pandoc
+   - office: libreoffice (snap)
+   - file sharing: magic-wormhole (distro), dropbox (distro)
+   - screenshots: flameshot
+
+** Messaging
+   - telegram (snap)
+   - discord (release, =deb=)
+   - slack (snap)
+   - zoom (release, =deb=)
+
+** Visual customization
+   - Iosevka fonts (release)
+   - Papirus icons (release)
+   - gtk-chtheme, qt5ct, lxappearance (distro)
+   - Nordic theme (release)

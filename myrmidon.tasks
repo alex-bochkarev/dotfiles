@@ -1,0 +1,18 @@
+[
+  {
+    "name": "JuliaLang Discourse",
+    "command": "chromium --app=https://discourse.julialang.org"
+  },
+  {
+    "name": "YouTube",
+    "command": "chromium --app=https://youtube.com"
+  },
+  {
+    "name": "Spotify",
+    "command": "firefox https://www.spotify.com"
+  },
+  {
+    "name": "Weight collab-table",
+    "command": "chromium --app=https://docs.google.com/spreadsheets/d/1aSL4B-8e5TN2v19z-5lrkTPlfNWNqeQG-gcj38ixPLg/edit#gid=0"
+  }
+]

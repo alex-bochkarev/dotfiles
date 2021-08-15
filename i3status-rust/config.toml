@@ -1,0 +1,69 @@
+theme = "gruvbox-dark"
+icons = "awesome"
+
+[[block]]
+block = "disk_space"
+path = "/"
+alias = "/"
+info_type = "available"
+format ="{icon} F{available}/T{total}"
+unit = "GB"
+interval = 20
+warning = 20.0
+alert = 10.0
+
+[[block]]
+block = "memory"
+display_type = "memory"
+format_mem = "{mem_total_used_percents}/{mem_total}"
+format_swap = "{swap_used_percents}/{swap_total}"
+
+[[block]]
+block = "cpu"
+format = "{utilization}{barchart}"
+interval = 1
+
+[[block]]
+block = "custom"
+command = "mpc status | grep -q playing && echo ⏸️ || echo ▶️"
+on_click = "mpc toggle"
+interval = 1
+
+[[block]]
+block = "temperature"
+collapsed = false
+interval = 10
+chip = "coretemp-isa-0000"
+format = "{max}"
+inputs = ["Core 0", "Core 1"]
+
+[[block]]
+block = "time"
+interval = 30
+format = "%Y-%m-%d %a | %H:%M"
+on_click = "gsimplecal"
+
+[[block]]
+block = "time"
+interval = 60
+format = "MOW %H:%M"
+timezone = "Europe/Moscow"
+
+[[block]]
+block = "backlight"
+invert_icons = true
+
+[[block]]
+block = "battery"
+interval = 10
+format = "{percentage} {time}"
+
+[[block]]
+block = "toggle"
+text = "VPN"
+command_state = "[[ \"$(expressvpn status)\" == \"Not connected\" ]]"
+command_on = "expressvpn connect smart"
+command_off = "expressvpn disconnect"
+
+[[block]]
+block = "sound"
