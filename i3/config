@@ -168,6 +168,7 @@ mode "resize" {
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
+        bindsym grave mode "default"
         bindsym $mod+r mode "default"
 }
 
@@ -185,9 +186,11 @@ mode "$mode_off" {
     # back to normal: Enter or Escape
     bindsym Return mode "default"
     bindsym Escape mode "default"
+    bindsym grave mode "default"
 }
 
 bindsym $mod+Escape mode "$mode_off"
+bindsym $mod+grave mode "$mode_off"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -214,12 +217,16 @@ bar {
 
 }
 # autostart applications
+exec --no-startup-id pulseaudio
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 exec --no-startup-id flameshot
 exec --no-startup-id dropbox start
 exec --no-startup-id emacs --name="mainframe"
 exec --no-startup-id urxvtd
+exec --no-startup-id dunst
+exec --no-startup-id gajim
+exec --no-startup-id mpd
 exec --no-startup-id cbatticon
 exec --no-startup-id i3-msg "workspace $ws3; layout tabbed; exec snap run telegram-desktop"
 # exec --no-startup-id i3-msg "workspace $ws3; exec chromium --app=https://web.whatsapp.com"
@@ -259,7 +266,7 @@ bindsym $mod+bracketright move workspace to output right
 # aux commands
 bindsym $mod+u exec ~/ab-unixtools/rofi-u.sh
 bindsym $mod+g exec "fuzzy_win ~/ab-unixtools/fzf-go.sh"
-bindsym $mod+grave exec "flameshot gui"
+bindsym $mod+apostrophe exec "flameshot gui"
 bindsym $mod+m exec alacritty --title "ncmpcpp-window" -e "ncmpcpp"
 bindsym $mod+z exec emacsclient -cF '((name . "emacs-float") (width . 70) (height . 25))' -e '(ab-full-orf)'
 bindsym $mod+y exec emacsclient -cF '((name . "emacs-float") (width . 70) (height . 25))' -e '(spacemacs/ab|goto-config-file-transient-state/body)'

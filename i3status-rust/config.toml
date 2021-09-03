@@ -15,7 +15,7 @@ alert = 10.0
 [[block]]
 block = "memory"
 display_type = "memory"
-format_mem = "{mem_total_used_percents}/{mem_total}"
+format_mem = "{mem_used_percents}/{mem_total}"
 format_swap = "{swap_used_percents}/{swap_total}"
 
 [[block]]
@@ -53,17 +53,23 @@ timezone = "Europe/Moscow"
 block = "backlight"
 invert_icons = true
 
-[[block]]
-block = "battery"
-interval = 10
-format = "{percentage} {time}"
+# [[block]]
+# block = "battery"
+# interval = 10
+# format = "{percentage} {time}"
+
+## re:toggle, from https://github.com/greshake/i3status-rust/issues/669#issuecomment-628720874
+## command_state has to print something out to mean "on"
+## command_state has to print nothing out to mean "off" (both of these are documented)
+## command_state has to exit successfully, $? == 0 (this one is not documented)
 
 [[block]]
 block = "toggle"
 text = "VPN"
-command_state = "[[ \"$(expressvpn status)\" == \"Not connected\" ]]"
+command_state = "[[ \"$(expressvpn status)\" != \"Not connected\" ]] && echo on || echo"
 command_on = "expressvpn connect smart"
 command_off = "expressvpn disconnect"
+interval = 1
 
 [[block]]
 block = "sound"

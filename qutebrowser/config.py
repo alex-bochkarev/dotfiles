@@ -34,3 +34,11 @@ c.url.searchengines["r"] = "https://reddit.com/r/{}"
 # TODO: add "src" to open page source for my website
 
 c.url.start_pages = ["file:///home/bochkarev/sandbox/startpage/start.html"]
+
+# Re: fprinting, https://wiki.archlinux.org/title/Qutebrowser#Minimize_fingerprinting
+
+c.content.headers.user_agent = "Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0"
+c.content.headers.accept_language = "en-US,en;q=0.5"
+c.content.headers.custom = {"accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"}
+c.content.canvas_reading = False
+c.content.geolocation = False
