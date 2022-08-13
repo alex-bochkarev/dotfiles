@@ -1,0 +1,28 @@
+#+TITLE: Notes / things to be cleaned-up or implemented
+#+CATEGORY: dotfiles
+
+* Current project TODOs
+** TODO Add org-protocol setup!
+[2022-08-13 Sat 11:09]
+
+Things that required to do outside emacs config (I guess, just a =.desktop= file? what else was it?..)
+** TODO Add =fzf-jump= related config files and other scripts
+[2022-08-13 Sat 10:46]
+Anything else besides =~/.cdg_paths=?.. Maybe put into some separate scripts?
+
+Either way: I'd need to find a good place to these things in =~/opt=, otherwise
+they will get lost. They used to live in =~/.config/abtools=, now in
+=~/opt/ab-unixtools= and =~/opt/bin=.
+
+** LATER Check how to manage compiled Emacs with GNU Stow?  :someday:
+
+* Notes
+** Some files were symlinked to the originals in =~/.config=.
+[2022-08-13 Sat 10:55]
+
+ The following files are symlinked to the originals in =.config= folder:
+ =.vimrc=, =.spacemacs=, =.mbsyncrc=, =.msmtprc=, =.Xmodmap=, =.Xresources=,
+ =.xsession=, =.xsessionrc=, =.zlogin=, =.Renviron=, =.julia/config/startup.jl=.
+
+** TODO Add ignore files to GNU Stow
+And add some app-specific notes, such as the =.authinfo.gpg= format.

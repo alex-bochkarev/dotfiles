@@ -37,7 +37,7 @@ gaps outer 5
 smart_borders on
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec i3-sensible-terminal
 # it was i3-bensible-terminal, then termite
 
 # kill focused window
@@ -51,10 +51,10 @@ bindsym $mod+d exec dmenu_run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j exec --no-startup-id "~/ab-unixtools/i3-navigate-emacs down"
-bindsym $mod+k exec --no-startup-id "~/ab-unixtools/i3-navigate-emacs up"
-bindsym $mod+l exec --no-startup-id "~/ab-unixtools/i3-navigate-emacs right"
-bindsym $mod+h exec --no-startup-id "~/ab-unixtools/i3-navigate-emacs left"
+bindsym $mod+j exec --no-startup-id "~/opt/ab-unixtools/i3-navigate-emacs down"
+bindsym $mod+k exec --no-startup-id "~/opt/ab-unixtools/i3-navigate-emacs up"
+bindsym $mod+l exec --no-startup-id "~/opt/ab-unixtools/i3-navigate-emacs right"
+bindsym $mod+h exec --no-startup-id "~/opt/ab-unixtools/i3-navigate-emacs left"
 bindsym $mod+semicolon exec --no-startup-id "~/ab-unixtools/i3-navigate-emacs right"
 
 # alternatively, you can use the cursor keys:
@@ -94,7 +94,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+Ctrl+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -154,10 +154,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
         bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym j resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -172,16 +172,17 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
-bindsym $mod+r mode "resize"
+bindsym $mod+v mode "resize"
 
 
 # power off mode
-set $mode_off System (r) reboot, (d) down, (l) lock, (s) suspend
+set $mode_off System (r) Reboot, (d) Down, (l) Lock, (s) Suspend (o) logOut
 mode "$mode_off" {
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
     bindsym d exec --no-startup-id systemctl poweroff -i, mode "default"
-    bindsym l exec --no-startup-id ~/ab-unixtools/lockme, mode "default"
-    bindsym s exec --no-startup-id "~/ab-unixtools/lockme; systemctl suspend", mode "default"
+    bindsym l exec --no-startup-id ~/opt/ab-unixtools/lockme, mode "default"
+    bindsym o i3-msg exit, mode "default"
+    bindsym s exec --no-startup-id "~/opt/ab-unixtools/lockme; systemctl suspend", mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -201,7 +202,7 @@ bindsym $mod+grave mode "$mode_off"
 #   font pango:Iosevka Term 8
 # }
 bar {
-    font pango:Iosevka, FontAwesome 8
+    font pango:Iosevka, FontAwesome 10
     position top
     status_command ~/.cargo/bin/i3status-rs ~/.config/i3status-rust/config.toml
     colors {
@@ -243,6 +244,17 @@ for_window [title="ncmpcpp-window"] floating enable
 for_window [title="folder-jump"] floating enable
 for_window [class="URxvt" instance="URxvtFuzzy"] floating enable, border pixel 5
 for_window [instance="mainframe" title="mainframe"] move to workspace $ws1
+
+# floating defaults
+for_window [title="FuzzyWindow"] floating enable
+for_window [title="Skype"] floating enable
+for_window [title="Bluetooth Devices"] floating enable
+for_window [title="Volume Control"] floating enable
+for_window [title="Reminders"] floating enable
+for_window [class="Nemo"] floating enable
+for_window [class="Xfce4-display-settings"] floating enable
+for_window [class="Arandr"] floating enable
+
 # user keybindings # the scratchpad
 bindsym $mod+BackSpace scratchpad show
 bindsym $mod+Shift+BackSpace move to scratchpad
@@ -264,15 +276,15 @@ bindsym $mod+bracketleft move workspace to output left
 bindsym $mod+bracketright move workspace to output right
 
 # aux commands
-bindsym $mod+u exec ~/ab-unixtools/rofi-u.sh
-bindsym $mod+g exec "fuzzy_win ~/ab-unixtools/fzf-go.sh"
+bindsym $mod+u exec "~/.local/bin/rofimoji -f emojis math arrows ~/.config/rofimoji/data/favorites"
+bindsym $mod+g exec "~/opt/bin/fuzzy_win ~/opt/bin/fzf-go"
 bindsym $mod+apostrophe exec "flameshot gui"
 bindsym $mod+m exec alacritty --title "ncmpcpp-window" -e "ncmpcpp"
 bindsym $mod+z exec emacsclient -cF '((name . "emacs-float") (width . 70) (height . 25))' -e '(ab-full-orf)'
 bindsym $mod+y exec emacsclient -cF '((name . "emacs-float") (width . 70) (height . 25))' -e '(spacemacs/ab|goto-config-file-transient-state/body)'
-bindsym $mod+n exec "rofi -show drun"
+bindsym $mod+r exec "rofi -show drun"
 bindsym $mod+x exec "rofi -show run"
-bindsym $mod+p exec "fuzzy_win ~/ab-unixtools/fzf-pass.sh"
+bindsym $mod+p exec "~/opt/bin/fuzzy_win ~/opt/bin/fzf-pass"
 bindsym $mod+o exec "myrmidon ~/.config/myrmidon.tasks"
 
 # apps

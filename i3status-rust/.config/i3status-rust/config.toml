@@ -50,6 +50,12 @@ format = "MOW %H:%M"
 timezone = "Europe/Moscow"
 
 [[block]]
+block = "time"
+interval = 60
+format = "NY %H:%M"
+timezone = "America/New_York"
+
+[[block]]
 block = "backlight"
 invert_icons = true
 
@@ -66,10 +72,11 @@ invert_icons = true
 [[block]]
 block = "toggle"
 text = "VPN"
-command_state = "[[ \"$(expressvpn status)\" != \"Not connected\" ]] && echo on || echo"
+command_state = "[[ \"$(expressvpn status | grep -i connect | head -1)\" != \"Not connected\" ]] && echo on || echo"
 command_on = "expressvpn connect smart"
 command_off = "expressvpn disconnect"
 interval = 1
 
 [[block]]
 block = "sound"
+on_click="pavucontrol"

@@ -1,0 +1,5 @@
+# -*- mode:toml; -*-
+
+[flake8]
+# An option for flake8-docstring (enforcing PEP257)
+docstring-convention=google

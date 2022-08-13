@@ -31,9 +31,10 @@ c.url.searchengines["map"] = "https://www.google.com/maps/search/{}"
 c.url.searchengines["amz"] = "https://www.amazon.com/s?k={}"
 c.url.searchengines["lg"] = "https://juliagraphs.org/LightGraphs.jl/latest/search/?q={}"
 c.url.searchengines["r"] = "https://reddit.com/r/{}"
+c.url.searchengines["ve"] = "https://www.verbformen.com/conjugation/?w={}"
 # TODO: add "src" to open page source for my website
 
-c.url.start_pages = ["file:///home/bochkarev/sandbox/startpage/start.html"]
+c.url.start_pages = ["file:///home/bochkarev/projects/startpage/start.html"]
 
 # Re: fprinting, https://wiki.archlinux.org/title/Qutebrowser#Minimize_fingerprinting
 
