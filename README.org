@@ -1,45 +1,46 @@
-#+TITLE: AB/dotfiles -- a personal config repo.
+#+TITLE: AB/dotfiles -- my personal config repo.
 
-This repo provides a brief description and actually keeps my customized personal machine configuration (so that I could rebuild it quickly if necessary).
+This repo provides a brief description and actually keeps my customized personal
+machine configuration (so that I could rebuild it quickly if necessary).
 
 There are several folders relevant to the config, to keep everything tidy:
 
- | Folder                     | Description                             |
- |----------------------------+-----------------------------------------|
- | .config/                   | All config files and aux scripts        |
- | ⎣ spacemacs.d/             | Emacs configuration                     |
- | ⎣ cdg_paths                | User dir bookmarks                      |
- | ⎣ abtools/                 | Various my command-line tools / scripts |
- | ⎣ ...                      | (everything else)                       |
- | distrib/                   | Downloaded and installed programs       |
- | .screenlayout/             | Screen layouts for =arandr=             |
- | .local/bin/                | Symlinks to user-level executable files |
- | .icons/                    | Icons folder                            |
- | .themes/                   | Theme folder                            |
- | .fonts/                    | Fonts folder                            |
- | .mail/                     | Mail storage                            |
- | .local/share/applications/ | Apps' =.desktop= files                  |
- | Downloads/                 | Download folder (temporary)             |
+ | Folder                     | Description                               |
+ |----------------------------+-------------------------------------------|
+ | .config/                   | All config files and aux scripts          |
+ | ⎣ spacemacs.d/             | Emacs configuration, from [[https://github.com/alex-bochkarev/my-spacemacs-dotfiles][a separate repo]] |
+ | ⎣ ...                      | (everything else)                         |
+ | .screenlayout/             | Screen layouts for =arandr=               |
+ | .local/bin/                | Symlinks to user-level executable files   |
+ | .icons/                    | Icons folder                              |
+ | .themes/                   | Theme folder                              |
+ | .fonts/                    | Fonts folder                              |
+ | .mail/                     | Mail storage                              |
+ | .local/share/applications/ | Apps' =.desktop= files                    |
+ | Downloads/                 | Download folder (temporary)               |
+ | opt/                       | Downloaded and installed programs         |
+ | .cdg_paths                 | User dir bookmarks                        |
 
- The following files are symlinked to the originals in =.config= folder: =.vimrc=, =.spacemacs=, =.mbsyncrc=, =.msmtprc=, =.Xmodmap=, =.Xresources=, =.xsession=, =.xsessionrc=, =.zlogin=, =.Renviron=, =.julia/config/startup.jl=.
- 
-App sources in the description below are annotated as follows:
+ I switched to managing my configuration with a separate repo and [[https://www.gnu.org/software/stow/][GNU Stow]],
+ which seems to be really handy. (Got the idea from [[https://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html][here]].)
+
+App sources (besides =snap=/=flatpak=) in the description below are annotated as
+follows:
  | Source  | Description                       |
  |---------+-----------------------------------|
  | distro  | Debian repositories               |
  | git     | Official git repo                 |
  | release | (Binary) release from the website |
- | snap    | Well, snap.                       |
-  
+
 * Research and development stack
   Obviously, aside from Emacs, I use the following tools:
-  - Zotero and Zotero-connector (release) for literature management 
+  - Zotero and Zotero-connector (release) for literature management
   - org-roam (git) for extensive notes within Emacs
   - texlive (distro)
   - inkscape (distro)
   - R, cpp (distro)
   - julia (release)
-  - python (conda)
+  - python3 (distro) + python3-pip (distro). (I switched from =conda= to =pip=.)
   - gurobi solver (release)
   - zeal (git) for offline docs
   - freeplane (release) for wonderful mind-mapping
@@ -65,35 +66,35 @@ App sources in the description below are annotated as follows:
 ** Spacemacs-based setup
    - Emacs (git, built from source)
    - Spacemacs (git, development branch)
-     
+
 ** Web browser
    - qutebrowser (git)
    - firefox, chromium (distro); if something doesn't work in qute
 
 ** Email stack (in Emacs)
     - isync (mbsync) (distro)
-    - mu and mu4e (release)
+    - mu and mu4e (distro)
     - =org-msg= mode for HTML emails
     - GPG (distro)
 
 ** Other utils
    - shell: zsh + OhMyZsh
-   - terminal: alacritty, urxvt
-   - PDF: zathura, evince
-   - images: sxiv, feh, gthumb, gimp
-   - file mgt: ranger, spacefm
+   - terminal: xfce default terminal, alacritty, urxvt
+   - PDF: zathura, evince, atril
+   - images: gthumb, sxiv, feh, gimp
+   - file mgt: thunar, ranger, spacefm
    - photo: digikam
-   - music: pulse, mpd, mpc, and ncmpcpp
+   - music: pulse, qmmp, (configs for mpd, mpc, and ncmpcpp)
    - other media: vlc
    - various text format-related conversions: pandoc
-   - office: libreoffice (snap)
+   - office: libreoffice (distro)
    - file sharing: magic-wormhole (distro), dropbox (distro)
    - screenshots: flameshot
 
 ** Messaging
-   - telegram (snap)
+   - telegram (flatpak)
    - discord (release, =deb=)
-   - slack (snap)
+   - slack (?)
    - zoom (release, =deb=)
 
 ** Visual customization
@@ -101,3 +102,7 @@ App sources in the description below are annotated as follows:
    - Papirus icons (release)
    - gtk-chtheme, qt5ct, lxappearance (distro)
    - Nordic theme (release)
+
+** Hardware-specific things
+   - Huion tablet driver (release, from official website)
+   - UHK Agent (for the keyboard)

@@ -1,0 +1,51 @@
+# -*- mode: sh -*-
+# my custom aliases
+
+# Debian-specific
+alias auu='sudo apt update && sudo apt upgrade'
+alias aguu="sudo apt update && sudo apt upgrade"
+alias agi='sudo apt install'
+
+# open stuff with a default app
+alias o='xdg-open'
+alias evs="expressvpn status"
+alias evc="expressvpn connect"
+alias evr="expressvpn disconnect && expressvpn connect"
+alias ev="expressvpn"
+
+alias cuid="pass Clemson/student | grep ID"
+# alias jl="julia --color=yes --project=."
+alias now="date +%Y-%m-%d-%H%M"
+alias vim="emacsclient -c -n --alternate-editor=vim"
+
+# python-specific
+alias venv="source .venv/bin/activate"
+alias venvd="source .venv/bin/deactivate"
+
+# alias jackin='export TERM=xterm-color; pass -c Clemson/student && ssh abochka@login.palmetto.clemson.edu; export TERM=xterm-termite'
+alias jackin='pass -c Clemson/student && ssh abochka@login.palmetto.clemson.edu'
+alias jl="julia --color=yes --project=."
+alias whatsapp="chromium --app=https://web.whatsapp.com &; disown %1"
+# Setup cdg function
+# fuzzy cd-ing
+# ------------------
+unalias cdg 2> /dev/null
+cdg() {
+    local dest_dir=$(cat $HOME/.cdg_paths | sed 's/ #.*//g' | sed '/^\s*$/d' | fzf )
+   if [[ "$dest_dir" != "" ]]; then
+      cd $dest_dir
+   fi
+}
+
+## setup a bookmark function
+## adds a bm if it's not there yet
+
+bm() {
+    local curr_dir="${PWD} # $*"
+    if ! grep -Fxq "$curr_dir" ~/.cdg_paths; then
+        echo "$curr_dir" >> ~/.cdg_paths
+    fi
+}
+
+# Housekeeping
+alias whosfat='du -cha --max-depth=1 . | grep -E "^[0-9]+[M|G]"'
