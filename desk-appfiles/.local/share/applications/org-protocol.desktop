@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Org-Protocol
+Exec=/home/bochkarev/opt/emacs/bin/emacsclient -c -F "((name . \"emacs-float\") (height . 30) (width . 80))" "%u"
+Icon=emacs-icon
+Type=Application
+Terminal=false
+MimeType=x-scheme-handler/org-protocol

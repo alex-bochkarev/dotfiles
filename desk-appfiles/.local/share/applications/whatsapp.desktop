@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=WhatsApp
+GenericName=Popular messenger
+Comment=message using web client
+Exec=chromium --new-window --app=https://web.whatsapp.com
+Type=Application
+Categories=Network;InstantMessaging;

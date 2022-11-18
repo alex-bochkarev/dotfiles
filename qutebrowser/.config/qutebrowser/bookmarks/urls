@@ -3,3 +3,5 @@ https://www.google.com/flights Google Flights
 https://www.sciencedirect.com/science/article/abs/pii/S0377221719301456 A Monte Carlo Tree Search approach to finding efficient patrolling schemes on graphs - ScienceDirect
 https://regssb.sis.clemson.edu/StudentRegistrationSsb/ssb/classRegistration/classRegistration Registration
 https://clemson.app.box.com/notes/850784723214 Panel: Academic Career and Job Search
+https://orcid.org/my-orcid?orcid=0000-0002-8325-5759 Alexey Bochkarev (0000-0002-8325-5759)
+http://localhost:5000/ab-main-ledger/query/?query_string=SELECT+++account%2C+date%2C+SUM%28convert%28position%2C+%27EUR%27%2C+date%29%29+AS+amount%0A+++++++++++++++++++++++++++++WHERE%0A++++++++++++++++++++++++++++++++++++++account+~+%27Expenses%27+++OR%0A++++++++++++++++++++++++++++++++++++++account+~+%27Income%27%0A+++++++++++++++++++++++++++++GROUP+BY+account%2C+date%0A+++++++++++++++++++++++++++++ORDER+BY+account%2C+date Query - Main ledger

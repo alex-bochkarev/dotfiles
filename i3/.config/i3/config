@@ -32,12 +32,13 @@ floating_modifier $mod
 
 # i3-gaps specific
 for_window [class=".*"] border pixel 2
-gaps inner 5
-gaps outer 5
+gaps inner 8
+gaps outer 8
 smart_borders on
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Shift+Return exec i3-sensible-terminal -T FloatingTerm
 # it was i3-bensible-terminal, then termite
 
 # kill focused window
@@ -109,7 +110,7 @@ set $ws2 "2:🌐"
 set $ws3 "3:🗨️"
 set $ws4 "4"
 set $ws5 "5:🛠"
-set $ws6 "6"
+set $ws6 "6:📅"
 set $ws7 "7"
 set $ws8 "8:🎵"
 set $ws9 "9:📔"
@@ -223,7 +224,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 exec --no-startup-id flameshot
 exec --no-startup-id dropbox start
-exec --no-startup-id emacs --name="mainframe"
+exec --no-startup-id ~/opt/emacs/bin/emacs --name="mainframe"
 exec --no-startup-id urxvtd
 exec --no-startup-id dunst
 exec --no-startup-id gajim
@@ -255,6 +256,8 @@ for_window [class="Nemo"] floating enable
 for_window [class="Xfce4-display-settings"] floating enable
 for_window [class="Arandr"] floating enable
 
+for_window [title="FloatingTerm"] floating enable
+
 # user keybindings # the scratchpad
 bindsym $mod+BackSpace scratchpad show
 bindsym $mod+Shift+BackSpace move to scratchpad
@@ -280,15 +283,16 @@ bindsym $mod+u exec "~/.local/bin/rofimoji -f emojis math arrows ~/.config/rofim
 bindsym $mod+g exec "~/opt/bin/fuzzy_win ~/opt/bin/fzf-go"
 bindsym $mod+apostrophe exec "flameshot gui"
 bindsym $mod+m exec alacritty --title "ncmpcpp-window" -e "ncmpcpp"
-bindsym $mod+z exec emacsclient -cF '((name . "emacs-float") (width . 70) (height . 25))' -e '(ab-full-orf)'
-bindsym $mod+y exec emacsclient -cF '((name . "emacs-float") (width . 70) (height . 25))' -e '(spacemacs/ab|goto-config-file-transient-state/body)'
+bindsym $mod+n exec emacsclient -cF '((name . "emacs-float") (width . 70) (height . 25))' -e '(spacemacs/deft)'
+# bindsym $mod+y exec emacsclient -cF '((name . "emacs-float") (width . 70) (height . 25))' -e '(spacemacs/ab|goto-config-file-transient-state/body)'
 bindsym $mod+r exec "rofi -show drun"
-bindsym $mod+x exec "rofi -show run"
+bindsym $mod+x exec "dmenu_run -p 'M-x'"
 bindsym $mod+p exec "~/opt/bin/fuzzy_win ~/opt/bin/fzf-pass"
 bindsym $mod+o exec "myrmidon ~/.config/myrmidon.tasks"
 
 # apps
-# bindsym $mod+z exec emacsclient -nc -a ""
+bindsym $mod+z exec emacsclient -nc -a ""
+bindsym $mod+Shift+z exec emacsclient -nc -a "" -F '((name . "emacs-float") (width . 100) (height . 50))'
 bindsym $mod+b exec qutebrowser
 bindsym $mod+t exec chromium --app=https://translate.google.com
 bindsym $mod+c exec chromium --app=https://calendar.google.com

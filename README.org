@@ -63,6 +63,9 @@ follows:
    - bluetooth: blueman
    - wifi: nm-applet / network-manager-gnome (distro)
 
+/Sidenote:/ perhaps, =xmonad= is the right way to customize the WM experience,
+but it seems a little too much effort, at the moment.
+
 ** Spacemacs-based setup
    - Emacs (git, built from source)
    - Spacemacs (git, development branch)
@@ -78,6 +81,7 @@ follows:
     - GPG (distro)
 
 ** Other utils
+   - backups with borg-backup
    - shell: zsh + OhMyZsh
    - terminal: xfce default terminal, alacritty, urxvt
    - PDF: zathura, evince, atril

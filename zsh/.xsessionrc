@@ -1,0 +1,8 @@
+# set PATH
+# Note that .profile is not read if I use a login manager
+# see https://wiki.debian.org/EnvironmentVariables
+
+# so it includes user's private bin if it exists
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
