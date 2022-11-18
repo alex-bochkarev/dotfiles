@@ -1,0 +1,4 @@
+#!/bin/env bash
+
+backup-home.sh /media/bochkarev/187851217850FEC6/homebox-backups $1
+borg-cleanup.sh /media/bochkarev/187851217850FEC6/homebox-backups

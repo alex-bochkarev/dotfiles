@@ -7,6 +7,6 @@ borg create \
      --exclude-from $HOME/.config/borg-exclude \
      --exclude-caches \
      --compression zlib,5 \
-     $1::'{hostname}-weekly-{now:%Y-%m-%d}' \
+     $1::"{hostname}-$2-{now:%Y-%m-%d}" \
      ~/
 
