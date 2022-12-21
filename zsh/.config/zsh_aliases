@@ -49,3 +49,63 @@ bm() {
 
 # Housekeeping
 alias whosfat='du -cha --max-depth=1 . | grep -E "^[0-9]+[M|G]"'
+
+## old aliases here >>> (from =ab-unixtools=)
+
+# -*- mode: sh -*-
+# my custom aliases
+#
+# alias jnb='jupyter notebook --ip=127.0.0.1'
+# alias jackin='export TERM=xterm-color; pass -c Clemson/student && ssh abochka@login.palmetto.clemson.edu; export TERM=xterm-termite'
+# alias gocloud='pass -c Clemson/student; sshfs abochka@xfer01-ext.palmetto.clemson.edu:/home/abochka /mnt/CUCl'
+# alias cuweb='pass -c Clemson/student; sudo mount -t davfs -o username=abochka,rw,dir_mode=0777,file_mode=0777 https://abochka-edit.people.clemson.edu /home/bochkarev/website/_mountpoint/'
+# alias mbcloud='pass -c email/mailbox.org && sudo mount -t davfs -o username=a\@bochkarev.io,rw,dir_mode=0777,file_mode=0777 https://dav.mailbox.org/servlet/webdav.infostore ~/cloud'
+# alias auu='sudo apt update && sudo apt upgrade'
+# alias shoot="bundle exec jekyll serve"
+# alias xm='xmodmap ~/.Xmodmap'
+# # open stuff with a default app
+# alias o='xdg-open'
+# alias ds='dropbox status'
+# alias kbu="setxkbmap -option 'grp:rctrl_toggle,caps:hyper' 'us,ru'; xm"
+# alias evs="expressvpn status"
+# alias evc="expressvpn connect"
+# alias evr="expressvpn disconnect && expressvpn connect"
+# alias ev="expressvpn"
+#
+# alias cuid="pass Clemson/student | grep ID"
+# alias jl="julia --color=yes --project=."
+# alias whatsapp="chromium --app=https://web.whatsapp.com &; disown %1"
+# alias aguu="sudo apt update && sudo apt upgrade"
+# alias now="date +%Y-%m-%d-%H%M"
+# # alias e="emacsclient -t -a ''"
+# # alias ec="emacsclient -c -n -a ''"
+#
+# ## my sys-navigation related stuff
+# # source /usr/share/autojump/autojump.sh
+#
+# # Setup cdg function
+# # fuzzy cd-ing
+# # ------------------
+# unalias cdg 2> /dev/null
+# cdg() {
+#     local dest_dir=$(cat $HOME/.cdg_paths | sed 's/ #.*//g' | sed '/^\s*$/d' | fzf )
+#    if [[ "$dest_dir" != "" ]]; then
+#       cd $dest_dir
+#    fi
+# }
+#
+# ## setup a bookmark function
+# ## adds a bm if it's not there yet
+#
+# bm() {
+#     local curr_dir="${PWD} # $*"
+#     if ! grep -Fxq "$curr_dir" ~/.cdg_paths; then
+#         echo "$curr_dir" >> ~/.cdg_paths
+#     fi
+# }
+#
+# # Add an "alert" alias for long running commands.  Use like so:
+# #   sleep 10; alert
+# alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+#
+# alias whosfat='du -cha --max-depth=1 . | grep -E "^[0-9]+[M|G]"'

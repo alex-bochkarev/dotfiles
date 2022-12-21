@@ -396,14 +396,14 @@ def_key "H"
 #def_key "ctrl-_"
 #  select_found_items
 #
-#def_key "/"
-#  find
+def_key "/"
+  find
 #
-# def_key "/"
-#   find_item_forward
-# 
-#def_key "?"
-#  find
+def_key "/"
+  find_item_forward
+
+def_key "?"
+  show_help
 #
 #def_key "?"
 #  find_item_backward

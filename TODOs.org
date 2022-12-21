@@ -6,15 +6,17 @@
 [2022-08-13 Sat 11:09]
 
 Things that required to do outside emacs config (I guess, just a =.desktop= file? what else was it?..)
-** TODO Add =fzf-jump= related config files and other scripts
+** LATER Check how to manage compiled Emacs with GNU Stow?  :someday:
+
+** DONE Add =fzf-jump= related config files and other scripts
+CLOSED: [2022-12-21 Wed 19:11]
+- State "DONE"       from "TODO"       [2022-12-21 Wed 19:11]
 [2022-08-13 Sat 10:46]
 Anything else besides =~/.cdg_paths=?.. Maybe put into some separate scripts?
 
 Either way: I'd need to find a good place to these things in =~/opt=, otherwise
 they will get lost. They used to live in =~/.config/abtools=, now in
 =~/opt/ab-unixtools= and =~/opt/bin=.
-
-** LATER Check how to manage compiled Emacs with GNU Stow?  :someday:
 
 * Notes
 ** Some files were symlinked to the originals in =~/.config=.

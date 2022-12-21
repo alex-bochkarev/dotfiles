@@ -19,7 +19,7 @@
 ## MPD clients (eg. ncmpc) also use that location.
 ##
 #
-lyrics_directory = ~/.config/ncmpcpp/lyrics
+lyrics_directory = ~/Music/lyrics
 #
 ##### connection settings #####
 #
@@ -31,7 +31,7 @@ lyrics_directory = ~/.config/ncmpcpp/lyrics
 #
 ## Needed for tag editor and file operations to work.
 ##
-mpd_music_dir = ~/music
+mpd_music_dir = ~/Music
 #
 mpd_crossfade_time = 5
 #
@@ -69,7 +69,7 @@ mpd_crossfade_time = 5
 ## visualizer.
 ##
 #
-#visualizer_data_source = /tmp/mpd.fifo
+visualizer_data_source = "/tmp/mpd.fifo"
 #
 ##
 ## Note: Below parameter is needed for ncmpcpp to determine which output
@@ -77,12 +77,12 @@ mpd_crossfade_time = 5
 ## to synchronize with audio.
 ##
 #
-#visualizer_output_name = Visualizer feed
+visualizer_output_name = "my_fifo"
 #
 ##
 ## If you set format to 44100:16:2, make it 'yes'.
 ##
-#visualizer_in_stereo = yes
+visualizer_in_stereo = "yes"
 #
 ##
 ## Note: set below to >=10 only if you have synchronization issues with
@@ -98,13 +98,13 @@ mpd_crossfade_time = 5
 #
 ## Available values: spectrum, wave, wave_filled, ellipse.
 ##
-#visualizer_type = spectrum
+visualizer_type = "spectrum"
 #
 #visualizer_fps = 60
 #
 #visualizer_autoscale = no
 #
-#visualizer_look = ●▮
+visualizer_look = "●▮"
 #
 #visualizer_color = blue, cyan, green, yellow, magenta, red
 #
@@ -319,7 +319,7 @@ mpd_crossfade_time = 5
 ## Note: Custom command that will be executed each time song changes. Useful for
 ## notifications etc.
 ##
-#execute_on_song_change = ""
+execute_on_song_change = notify-send "Now Playing" "$(mpc --format '%title% \n%artist% - %album%' current)"
 #
 ##
 ## Note: Custom command that will be executed each time player state
