@@ -1,0 +1,8 @@
+ [Nemo Action]
+
+ Name=Open with Emacs
+ Comment=Opens Emacs (client) for the selected file or current directory.
+ Exec=/home/bochkarev/opt/emacs/bin/emacsclient -cF '((name . "emacs-float") (width . 80) (height . 50))' %F
+ Icon-Name=accessories-text-editor
+ Selection=any
+ Extensions=any;
