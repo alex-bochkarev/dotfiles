@@ -69,13 +69,13 @@ invert_icons = true
 ## command_state has to print nothing out to mean "off" (both of these are documented)
 ## command_state has to exit successfully, $? == 0 (this one is not documented)
 
-[[block]]
-block = "toggle"
-text = "VPN"
-command_state = "[[ \"$(expressvpn status | grep -i connect | head -1)\" != \"Not connected\" ]] && echo on || echo"
-command_on = "expressvpn connect smart"
-command_off = "expressvpn disconnect"
-interval = 1
+# [[block]]
+# block = "toggle"
+# text = "VPN"
+# command_state = "[[ \"$(expressvpn status | grep -i connect | head -1)\" != \"Not connected\" ]] && echo on || echo"
+# command_on = "expressvpn connect smart"
+# command_off = "expressvpn disconnect"
+# interval = 1
 
 [[block]]
 block = "sound"

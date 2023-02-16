@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Freeplane
+GenericName=Mind map editor
+Comment=Create / edit mind maps.
+Exec=/home/bochkarev/opt/bin/freeplane
+Type=Application
+Categories=Graphics;Office;Science

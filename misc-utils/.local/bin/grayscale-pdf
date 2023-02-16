@@ -1,0 +1,13 @@
+#!/bin/env bash
+# USAGE: grayscale-pdf inputfile.pdf
+
+gs \
+ -sOutputFile=$(basename $1)-grayscale.pdf \
+ -sDEVICE=pdfwrite \
+ -sColorConversionStrategy=Gray \
+ -dProcessColorModel=/DeviceGray \
+ -dCompatibilityLevel=1.4 \
+ -dAutoRotatePages=/None \
+ -dNOPAUSE \
+ -dBATCH \
+ $1

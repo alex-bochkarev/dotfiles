@@ -174,6 +174,84 @@ Channel personal-inbox
 Channel personal-sent
 Channel personal-trash
 Channel personal-arc
+# == end of personal account config ==
+
+# == work config ==
+IMAPAccount RPTU
+# Address to connect to
+Host mail.uni-kl.de
+User a.bochkarev@rptu.de
+PassCmd "gpg -q --for-your-eyes-only --no-tty -d ~/.password-store/TUK/newpass.gpg | head -1"
+AuthMechs LOGIN
+SSLType IMAPS
+SSLVersions TLSv1.2
+
+# THEN WE SPECIFY THE LOCAL AND REMOTE STORAGE
+# - THE REMOTE STORAGE IS WHERE WE GET THE MAIL FROM (E.G., THE
+#   SPECIFICATION OF AN IMAP ACCOUNT)
+# - THE LOCAL STORAGE IS WHERE WE STORE THE EMAIL ON OUR COMPUTER
+
+# REMOTE STORAGE (USE THE IMAP ACCOUNT SPECIFIED ABOVE)
+IMAPStore RPTU-remote
+Account RPTU
+
+# LOCAL STORAGE (CREATE DIRECTORIES with mkdir -p ~/Maildir/acc1-gmail)
+MaildirStore RPTU-local
+Path ~/.mail/RPTU/
+Inbox ~/.mail/RPTU/INBOX
+# REQUIRED ONLY IF YOU WANT TO DOWNLOAD ALL SUBFOLDERS; SYNCING SLOWS DOWN
+# SubFolders Verbatim
+
+# CONNECTIONS SPECIFY LINKS BETWEEN REMOTE AND LOCAL FOLDERS
+#
+# CONNECTIONS ARE SPECIFIED USING PATTERNS, WHICH MATCH REMOTE MAIl
+# FOLDERS. SOME COMMONLY USED PATTERS INCLUDE:
+#
+# 1 "*" TO MATCH EVERYTHING
+# 2 "!DIR" TO EXCLUDE "DIR"
+# 3 "DIR" TO MATCH DIR
+
+Channel RPTU-inbox
+Master :RPTU-remote:
+Slave :RPTU-local:
+Patterns "INBOX"
+Create Both
+Expunge Both
+SyncState *
+
+Channel RPTU-trash
+Master :RPTU-remote:"Trash"
+Slave :RPTU-local:"Trash"
+Create Both
+Expunge Both
+SyncState *
+
+Channel RPTU-sent
+Master :RPTU-remote:"Sent Items"
+Slave :RPTU-local:"Sent"
+Create Both
+Expunge Both
+SyncState *
+
+Channel RPTU-arc
+Master :RPTU-remote:"Archive"
+Slave :RPTU-local:"Archive"
+Create Both
+Expunge Both
+SyncState *
+
+# GROUPS PUT TOGETHER CHANNELS, SO THAT WE CAN INVOKE
+# MBSYNC ON A GROUP TO SYNC ALL CHANNELS
+#
+# FOR INSTANCE: "mbsync gmail" GETS MAIL FROM
+# "gmail-inbox", "gmail-sent", and "gmail-trash"
+#
+Group RPTU
+Channel RPTU-inbox
+Channel RPTU-sent
+Channel RPTU-trash
+Channel RPTU-arc
+# == end of work config ==
 
 ######################################################################
 ## legacy gmail account setup
