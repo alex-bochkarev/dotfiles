@@ -2,6 +2,7 @@
 Name=Freeplane
 GenericName=Mind map editor
 Comment=Create / edit mind maps.
-Exec=/home/bochkarev/opt/bin/freeplane
+Exec=sh -c "$HOME/.local/bin/freeplane"
 Type=Application
+Icon=freeplane
 Categories=Graphics;Office;Science

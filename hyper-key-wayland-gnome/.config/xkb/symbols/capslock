@@ -1,0 +1,4 @@
+xkb_symbols "hyper" {
+    key <CAPS> { [ Hyper_L ] };
+    modifier_map Mod3 { <CAPS> };
+};

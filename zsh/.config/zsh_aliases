@@ -8,12 +8,7 @@ alias agi='sudo apt install'
 
 # open stuff with a default app
 alias o='xdg-open'
-alias evs="expressvpn status"
-alias evc="expressvpn connect"
-alias evr="expressvpn disconnect && expressvpn connect"
-alias ev="expressvpn"
 
-alias cuid="pass Clemson/student | grep ID"
 # alias jl="julia --color=yes --project=."
 alias now="date +%Y-%m-%d-%H%M"
 alias vim="emacsclient -c -n --alternate-editor=vim"
@@ -23,9 +18,9 @@ alias venv="source .venv/bin/activate"
 alias venvd="source .venv/bin/deactivate"
 
 # alias jackin='export TERM=xterm-color; pass -c Clemson/student && ssh abochka@login.palmetto.clemson.edu; export TERM=xterm-termite'
-alias jackin='pass -c Clemson/student && ssh abochka@login.palmetto.clemson.edu'
+#alias jackin='pass -c Clemson/student && ssh abochka@login.palmetto.clemson.edu'
 alias jl="julia --color=yes --project=."
-alias whatsapp="chromium --app=https://web.whatsapp.com &; disown %1"
+#alias whatsapp="chromium --app=https://web.whatsapp.com &; disown %1"
 # Setup cdg function
 # fuzzy cd-ing
 # ------------------
