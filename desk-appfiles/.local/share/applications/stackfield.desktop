@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Stackfield
+GenericName=Corporate messenger (RPTU)
+Comment=Word and text translation
+Exec=google-chrome --new-window --app=https://stackfield.com
+Type=Application
+Categories=Office;

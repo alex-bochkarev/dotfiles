@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=ChatGPT
+GenericName=Our overlord AI
+Comment=be gentle with it, it will conquer the world soon
+Exec=google-chrome --new-window --app=https://chat.openai.com/chat
+Type=Application
+Categories=Network;

@@ -1,13 +1,18 @@
 #+TITLE: Notes / things to be cleaned-up or implemented
 #+CATEGORY: dotfiles
+#+STARTUP: show2levels
 
 * Current project TODOs
 ** TODO Add org-protocol setup!
 [2022-08-13 Sat 11:09]
 
-Things that required to do outside emacs config (I guess, just a =.desktop= file? what else was it?..)
-** LATER Check how to manage compiled Emacs with GNU Stow?  :someday:
+Things that required to do outside emacs config (I guess, just a =.desktop=
+file? what else was it?..)
 
+** DONE Check how to manage compiled Emacs with GNU Stow?           :someday:
+CLOSED: [2023-02-27 Mo 13:00]
+
+- State "DONE"       from "LATER"      [2023-02-27 Mo 13:00]
 ** DONE Add =fzf-jump= related config files and other scripts
 CLOSED: [2022-12-21 Wed 19:11]
 - State "DONE"       from "TODO"       [2022-12-21 Wed 19:11]
@@ -26,5 +31,7 @@ they will get lost. They used to live in =~/.config/abtools=, now in
  =.vimrc=, =.spacemacs=, =.mbsyncrc=, =.msmtprc=, =.Xmodmap=, =.Xresources=,
  =.xsession=, =.xsessionrc=, =.zlogin=, =.Renviron=, =.julia/config/startup.jl=.
 
+ (Perhaps, not as relevant with Gnome.)
+ 
 ** TODO Add ignore files to GNU Stow
 And add some app-specific notes, such as the =.authinfo.gpg= format.

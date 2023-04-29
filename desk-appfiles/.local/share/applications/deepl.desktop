@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=DeepL
+GenericName=Online dictionary
+Comment=Word and text translation
+Exec=google-chrome --new-window --app=https://deepl.com
+Type=Application
+Categories=Office;

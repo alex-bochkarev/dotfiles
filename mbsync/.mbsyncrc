@@ -41,37 +41,37 @@ Inbox ~/.mail/CU/INBOX
 # 3 "DIR" TO MATCH DIR
 
 Channel CU-gmail-inbox
-Master :CU-gmail-remote:
-Slave :CU-gmail-local:
+Far :CU-gmail-remote:
+Near :CU-gmail-local:
 Patterns "INBOX"
 Create Both
 Expunge Both
 SyncState *
 
 Channel CU-gmail-trash
-Master :CU-gmail-remote:"[Gmail]/Trash"
-Slave :CU-gmail-local:"Trash"
+Far :CU-gmail-remote:"[Gmail]/Trash"
+Near :CU-gmail-local:"Trash"
 Create Both
 Expunge Both
 SyncState *
 
 Channel CU-gmail-sent
-Master :CU-gmail-remote:"[Gmail]/Sent Mail"
-Slave :CU-gmail-local:"Sent"
+Far :CU-gmail-remote:"[Gmail]/Sent Mail"
+Near :CU-gmail-local:"Sent"
 Create Both
 Expunge Both
 SyncState *
 
 Channel CU-gmail-all
-Master :CU-gmail-remote:"[Gmail]/All Mail"
-Slave :CU-gmail-local:"Archive"
+Far :CU-gmail-remote:"[Gmail]/All Mail"
+Near :CU-gmail-local:"Archive"
 Create Both
 Expunge Both
 SyncState *
 
 Channel CU-gmail-starred
-Master :CU-gmail-remote:"[Gmail]/Starred"
-Slave :CU-gmail-local:"Starred"
+Far :CU-gmail-remote:"[Gmail]/Starred"
+Near :CU-gmail-local:"Starred"
 Create Both
 Expunge Both
 SyncState *
@@ -128,37 +128,37 @@ Inbox ~/.mail/personal/INBOX
 # 3 "DIR" TO MATCH DIR
 
 Channel personal-inbox
-Master :personal-remote:
-Slave :personal-local:
+Far :personal-remote:
+Near :personal-local:
 Patterns "INBOX"
 Create Both
 Expunge Both
 SyncState *
 
 Channel personal-lists
-Master :personal-remote:"INBOX/lists"
-Slave :personal-local:"lists"
+Far :personal-remote:"INBOX/lists"
+Near :personal-local:"lists"
 Create Both
 Expunge Both
 SyncState *
 
 Channel personal-trash
-Master :personal-remote:"Trash"
-Slave :personal-local:"Trash"
+Far :personal-remote:"Trash"
+Near :personal-local:"Trash"
 Create Both
 Expunge Both
 SyncState *
 
 Channel personal-sent
-Master :personal-remote:"Sent"
-Slave :personal-local:"Sent"
+Far :personal-remote:"Sent"
+Near :personal-local:"Sent"
 Create Both
 Expunge Both
 SyncState *
 
 Channel personal-arc
-Master :personal-remote:"Archive"
-Slave :personal-local:"Archive"
+Far :personal-remote:"Archive"
+Near :personal-local:"Archive"
 Create Both
 Expunge Both
 SyncState *
@@ -212,30 +212,30 @@ Inbox ~/.mail/RPTU/INBOX
 # 3 "DIR" TO MATCH DIR
 
 Channel RPTU-inbox
-Master :RPTU-remote:
-Slave :RPTU-local:
+Far :RPTU-remote:
+Near :RPTU-local:
 Patterns "INBOX"
 Create Both
 Expunge Both
 SyncState *
 
 Channel RPTU-trash
-Master :RPTU-remote:"Trash"
-Slave :RPTU-local:"Trash"
+Far :RPTU-remote:"Trash"
+Near :RPTU-local:"Trash"
 Create Both
 Expunge Both
 SyncState *
 
 Channel RPTU-sent
-Master :RPTU-remote:"Sent Items"
-Slave :RPTU-local:"Sent"
+Far :RPTU-remote:"Sent Items"
+Near :RPTU-local:"Sent"
 Create Both
 Expunge Both
 SyncState *
 
 Channel RPTU-arc
-Master :RPTU-remote:"Archive"
-Slave :RPTU-local:"Archive"
+Far :RPTU-remote:"Archive"
+Near :RPTU-local:"Archive"
 Create Both
 Expunge Both
 SyncState *
@@ -293,37 +293,37 @@ Inbox ~/.mail/legacy/INBOX
 # 3 "DIR" TO MATCH DIR
 
 Channel legacy-gmail-inbox
-Master :legacy-gmail-remote:
-Slave :legacy-gmail-local:
+Far :legacy-gmail-remote:
+Near :legacy-gmail-local:
 Patterns "INBOX"
 Create Both
 Expunge Both
 SyncState *
 
 Channel legacy-gmail-trash
-Master :legacy-gmail-remote:"[Gmail]/Trash"
-Slave :legacy-gmail-local:"Trash"
+Far :legacy-gmail-remote:"[Gmail]/Trash"
+Near :legacy-gmail-local:"Trash"
 Create Both
 Expunge Both
 SyncState *
 
 Channel legacy-gmail-sent
-Master :legacy-gmail-remote:"[Gmail]/Sent Mail"
-Slave :legacy-gmail-local:"Sent"
+Far :legacy-gmail-remote:"[Gmail]/Sent Mail"
+Near :legacy-gmail-local:"Sent"
 Create Both
 Expunge Both
 SyncState *
 
 Channel legacy-gmail-all
-Master :legacy-gmail-remote:"[Gmail]/All Mail"
-Slave :legacy-gmail-local:"Archive"
+Far :legacy-gmail-remote:"[Gmail]/All Mail"
+Near :legacy-gmail-local:"Archive"
 Create Both
 Expunge Both
 SyncState *
 
 Channel legacy-gmail-starred
-Master :legacy-gmail-remote:"[Gmail]/Starred"
-Slave :legacy-gmail-local:"Starred"
+Far :legacy-gmail-remote:"[Gmail]/Starred"
+Near :legacy-gmail-local:"Starred"
 Create Both
 Expunge Both
 SyncState *

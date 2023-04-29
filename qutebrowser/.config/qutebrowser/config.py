@@ -13,10 +13,13 @@ config.bind(',cg', 'spawn --userscript org-protocol capture bg')
 
 # Simple Zotero integration
 # Bookmarklet source: https://www.zotero.org/download/bookmarklet
-config.bind(',cz', ":jseval --url --quiet javascript:var%20d=document,s=d.createElement('script');s.src='https://www.zotero.org/bookmarklet/loader.js';(d.body?d.body:d.documentElement).appendChild(s);void(0);")
+config.bind(',cz', ":spawn --userscript qute-zotero")
 
 c.aliases.update({"ff" : "spawn firefox {url}"})
 c.aliases.update({"chrom" : "spawn chromium {url}"})
+
+# aliases for userscripts
+c.aliases.update({"qr" : "spawn --userscript qr"})
 
 c.editor.command = ['emacsclient', '-c', '{}']
 
@@ -34,7 +37,7 @@ c.url.searchengines["r"] = "https://reddit.com/r/{}"
 c.url.searchengines["ve"] = "https://www.verbformen.com/conjugation/?w={}"
 # TODO: add "src" to open page source for my website
 
-c.url.start_pages = ["file:///home/bochkarev/projects/startpage/start.html"]
+c.url.start_pages = ["file:///home/bochkare/projects/startpage/start.html"]
 
 # Re: fprinting, https://wiki.archlinux.org/title/Qutebrowser#Minimize_fingerprinting
 
