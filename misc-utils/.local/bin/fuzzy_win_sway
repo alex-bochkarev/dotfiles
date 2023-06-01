@@ -3,6 +3,6 @@
 # fuzzy_win launches the script from param in a centered window
 xdotool search --onlyvisible --classname FuzzyWindow windowunmap \
   || xdotool search --classname FuzzyWindow windowmap \
-  || xfce4-terminal -T FuzzyWindow --hide-menubar --hide-borders --hide-toolbar --hide-scrollbar -e $1
+  || gnome-terminal -t FuzzyWindow --hide-menubar -e $1
 
 # note: it was with --geometry 50x25+625+100 

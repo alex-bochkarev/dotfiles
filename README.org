@@ -26,11 +26,12 @@ There are several folders relevant to the config, to keep everything tidy:
 
 App sources (besides =snap=/=flatpak=) in the description below are annotated as
 follows:
- | Source  | Description                       |
- |---------+-----------------------------------|
- | distro  | Debian repositories               |
- | git     | Official git repo                 |
- | release | (Binary) release from the website |
+ | Source  | Description                               |
+ |---------+-------------------------------------------|
+ | distro  | Debian repositories                       |
+ | git     | Official git repo                         |
+ | release | (Binary) release from the website         |
+ | PPA     | A 3rd-party PPA (for Ubuntu-based system) |
 
 * Research and development stack
   Obviously, aside from Emacs, I use the following tools:
@@ -65,6 +66,12 @@ follows:
 
 /Sidenote:/ perhaps, =xmonad= is the right way to customize the WM experience,
 but it seems a little too much effort, at the moment.
+** Alternative/Wayland config is sway-based (+ somewhat GNOME), with:
+   - sway
+   - waybar
+   - wob for overlay bars
+   - wdisplays for monitors setup
+   - ulauncher (PPA) + extensions
 
 ** Spacemacs-based setup
    - Emacs (git, built from source)

@@ -3,6 +3,8 @@
 #+STARTUP: show2levels
 
 * Current project TODOs
+** TODO Describe multi-key setup
+[2023-06-01 Do 12:23]
 ** TODO Add org-protocol setup!
 [2022-08-13 Sat 11:09]
 
