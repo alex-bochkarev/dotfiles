@@ -220,7 +220,7 @@ exec_always sh -c "killall waybar; ~/opt/Waybar/build/waybar &"
 exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
 set $WOBSOCK /tmp/wobpipe
 exec rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob
-exec --no-startup-id "ssh-agent -s"
+exec --no-startup-id "eval $(ssh-agent -s)"
 
 # keep clipboard after closing a window (see https://wiki.archlinux.org/title/sway)
 exec wl-paste -t text --watch clipman store --no-persist
