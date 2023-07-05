@@ -133,7 +133,7 @@ bindsym --to-code {
 set $ws1 "1:🖊️"
 set $ws2 "2:🌐"
 set $ws3 "3:🗨️"
-set $ws4 "4"
+set $ws4 "4:💼"
 set $ws5 "5:🛠"
 set $ws6 "6:📅"
 set $ws7 "7"
@@ -217,10 +217,12 @@ bindsym $mod+grave mode "$mode_off"
 exec_always sh -c "killall waybar; ~/opt/Waybar/build/waybar &"
 
 # autostart applications
-exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP=sway XDG_SESSION_DESKTOP=sway
 set $WOBSOCK /tmp/wobpipe
 exec rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob
 exec --no-startup-id "eval $(ssh-agent -s)"
+exec --no-startup-id dunst
+exec --no-startup-id element-desktop
 
 # keep clipboard after closing a window (see https://wiki.archlinux.org/title/sway)
 exec wl-paste -t text --watch clipman store --no-persist
@@ -229,12 +231,12 @@ exec --no-startup-id pulseaudio
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 exec --no-startup-id dropbox start
-exec --no-startup-id ~/.local/bin/emacs --daemon
+# exec --no-startup-id ~/.local/bin/emacs --daemon
 exec_always --no-startup-id exec setxkbmap -option 'grp:rctrl_toggle,caps:hyper' 'us,us' && sleep 2
 exec_always --no-startup-id exec xmodmap ~/.Xmodmap && sleep 1
 
 # set wallpaper
-output "*" bg ~/.wallpapers/coffee-axe.jpg fill
+output "*" bg ~/.wallpapers/IMG_1490.JPG fill
 
 # emacs-specific behavior
 for_window [urgent="latest" class="emacs.Emacs"] focus
