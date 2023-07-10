@@ -1,6 +1,6 @@
 #!/bin/bash
 
-seldest=$(cat ~/.cdg_paths | sed 's/[ ]\?#.*//' | fzf)
+seldest=$(cat $HOME/.cdg_paths | fzf | sed 's/[[:space:]]*#.*//g' | sed '/^\s*$/d')
 
 if [ ! -z "$seldest" ]; then
     xdotool windowunmap $(xdotool getactivewindow)

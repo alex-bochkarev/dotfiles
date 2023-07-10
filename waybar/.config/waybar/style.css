@@ -103,8 +103,9 @@ window#waybar.chromium {
 }
 
 #battery {
-    background-color: #ffffff;
+    background-color: cornsilk;
     color: #000000;
+    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
 }
 
 #battery.charging, #battery.plugged {
@@ -151,20 +152,26 @@ label:focus {
 
 #network {
     background-color: transparent;
+    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
+
 }
 
 #network.disconnected {
-    background-color: #f53c3c;
+    background-color: cornsilk;
+    border-bottom: 3px solid #39ff14;
+    color: #000000;
 }
 
 #pulseaudio {
-    background-color: #f1c40f;
+    background-color: cornsilk;
+    border-bottom: 3px solid #39ff14;
     color: #000000;
 }
 
 #pulseaudio.muted {
-    background-color: #90b1b1;
-    color: #2a5c45;
+    background-color: transparent;
+    color: #ffffff;
+    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
 }
 
 #custom-media {
@@ -190,7 +197,9 @@ label:focus {
 }
 
 #tray {
-    background-color: transparent;
+    background-color:cornsilk;
+    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
+
 }
 
 #tray > .passive {
@@ -229,8 +238,9 @@ label:focus {
 }
 
 #language {
-    background: #39ff14;
-    color: #740864;
+    background-color: cornsilk;
+    border-bottom: 3px solid #39ff14;
+    color: #000000;
     padding: 0 5px;
     margin: 0 5px;
     min-width: 16px;

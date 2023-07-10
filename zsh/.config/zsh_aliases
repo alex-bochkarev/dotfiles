@@ -26,19 +26,36 @@ alias jl="julia --color=yes --project=."
 # ------------------
 unalias cdg 2> /dev/null
 cdg() {
-    local dest_dir=$(cat $HOME/.cdg_paths | sed 's/ #.*//g' | sed '/^\s*$/d' | fzf )
-   if [[ "$dest_dir" != "" ]]; then
-      cd $dest_dir
-   fi
+    local dest_dir=$(cat $HOME/.cdg_paths | fzf | sed 's/[[:space:]]*#.*//g' | sed '/^\s*$/d')
+    if [[ "$dest_dir" != "" ]]; then
+        if [ -d "$dest_dir" ]
+        then
+            cd $dest_dir
+        else
+            echo "we are having: >$dest_dir<"
+            if [ -f "$dest_dir" ]
+            then
+                xdg-open "$dest_dir"
+            else
+                echo "No file or directory: $dest_dir"
+            fi
+        fi
+    fi
 }
 
 ## setup a bookmark function
 ## adds a bm if it's not there yet
 
 bm() {
-    local curr_dir="${PWD} # $*"
-    if ! grep -Fxq "$curr_dir" ~/.cdg_paths; then
-        echo "$curr_dir" >> ~/.cdg_paths
+    if [ -e "$1" ]
+    then
+        local bookmark="$(realpath $1) # ${@:2}"
+    else
+        # no valid file supplied --- bookmarking current dir + comment
+        local bookmark="${PWD} # $*"
+    fi
+    if ! grep -Fxq "$bookmark" ~/.cdg_paths; then
+        echo "$bookmark" >> ~/.cdg_paths
     fi
 }
 
