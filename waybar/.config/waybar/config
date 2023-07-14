@@ -85,7 +85,7 @@
     },
    "clock#Home": {
         // "timezone": "America/New_York",
-        "format":"{:<span size='14pt'>📅 %a %d.%m -- 🕑 %H:%M </span>}",
+        "format":"{:<span size='14pt'>📅 %a %d.%m [W %U] -- 🕑 %H:%M </span>}",
         "on-click-right":"thunderbird -calendar",
 
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",

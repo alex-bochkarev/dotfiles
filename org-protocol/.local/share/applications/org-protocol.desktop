@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Org-Protocol
-Exec=emacsclient -c -F "((name . \"emacs-float\") (height . 30) (width . 80))" "%u"
+Exec=/home/bochkare/.local/bin/EDITOR_FLOAT  "%u"
 Icon=emacs-icon
 Type=Application
 Terminal=false
