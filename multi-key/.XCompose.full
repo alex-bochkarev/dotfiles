@@ -1,60 +1,148 @@
 # UTF-8 (Unicode) Compose sequences
 #
-
-# German letters
-<Multi_key> <u> <e> : "ü"
-<Multi_key> <U> <E> : "Ü"
-
-<Multi_key> <o> <e> : "ö"
-<Multi_key> <O> <E> : "Ö"
-
-<Multi_key> <a> <e> : "ä"
-<Multi_key> <A> <E> : "Ä"
-
-<Multi_key> <s> <s> : "ß"
-<Multi_key> <S> <S>	: "ẞ"	U1e9e # LATIN CAPITAL LETTER SHARP S
-
-<Multi_key> <greater> <greater>		: "»"	guillemotright # RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK
-<Multi_key> <less> <less>		: "«"	guillemotleft # LEFT-POINTING DOUBLE ANGLE QUOTATION MARK
-
-# Nice unicode symbols
-<Multi_key> <less> <minus>		: "←"	U2190 # LEFTWARDS ARROW
-<Multi_key> <minus> <greater>		: "→"	U2192 # RIGHTWARDS ARROW
-
+# Spacing versions of dead accents
+<dead_tilde> <space>			: "~"	asciitilde # TILDE
+<dead_tilde> <dead_tilde>		: "~"	asciitilde # TILDE
+<Multi_key> <minus> <space>		: "~"	asciitilde # TILDE
+<Multi_key> <space> <minus>		: "~"	asciitilde # TILDE
+<dead_acute> <space>			: "'"	apostrophe # APOSTROPHE
+<dead_acute> <dead_acute>		: "´"	acute # ACUTE ACCENT
+<Multi_key> <apostrophe> <apostrophe>	: "´"	acute # ACUTE ACCENT
+<dead_grave> <space>			: "`"	grave # GRAVE ACCENT
+<dead_grave> <dead_grave>		: "`"	grave # GRAVE ACCENT
+<dead_circumflex> <space>		: "^"	asciicircum # CIRCUMFLEX ACCENT
+<dead_circumflex> <dead_circumflex>	: "^"	asciicircum # CIRCUMFLEX ACCENT
+<dead_abovering> <space>		: "°"	degree # DEGREE SIGN
+<dead_abovering> <dead_abovering>	: "°"	degree # DEGREE SIGN
+<Multi_key> <o> <o>			: "°"	degree # DEGREE SIGN
+<Multi_key> <asterisk> <0>		: "°"	degree # DEGREE SIGN
+<Multi_key> <0> <asterisk>		: "°"	degree # DEGREE SIGN
+<dead_macron> <space>			: "¯"	macron # MACRON
+<dead_macron> <dead_macron>		: "¯"	macron # MACRON
+<Multi_key> <minus> <asciicircum>	: "¯"	macron # MACRON
+<Multi_key> <asciicircum> <minus>	: "¯"	macron # MACRON
+<Multi_key> <underscore> <underscore>	: "¯"	macron # MACRON
+<Multi_key> <underscore> <asciicircum>	: "¯"	macron # MACRON
+<dead_breve> <space>			: "˘"	breve # BREVE
+<dead_breve> <dead_breve>		: "˘"	breve # BREVE
+<Multi_key> <space> <parenleft>		: "˘"	breve # BREVE
+<Multi_key> <parenleft> <space>		: "˘"	breve # BREVE
+<dead_abovedot> <space>			: "˙"	abovedot # DOT ABOVE
+<dead_abovedot> <dead_abovedot>		: "˙"	abovedot # DOT ABOVE
+<dead_diaeresis> <dead_diaeresis>	: "¨"	diaeresis # DIAERESIS
+<Multi_key> <quotedbl> <quotedbl>	: "¨"	diaeresis # DIAERESIS
+<dead_diaeresis> <space>		: "\""	quotedbl # QUOTATION MARK
+<dead_doubleacute> <space>		: "˝"	U2dd # DOUBLE ACUTE ACCENT
+<dead_doubleacute> <dead_doubleacute>	: "˝"	U2dd # DOUBLE ACUTE ACCENT
+<dead_caron> <space>			: "ˇ"	caron # CARON
+<dead_caron> <dead_caron>		: "ˇ"	caron # CARON
+<Multi_key> <space> <less>		: "ˇ"	caron # CARON
+<Multi_key> <less> <space>		: "ˇ"	caron # CARON
+<dead_cedilla> <space>			: "¸"	cedilla # CEDILLA
+<dead_cedilla> <dead_cedilla>		: "¸"	cedilla # CEDILLA
+<Multi_key> <comma> <space>		: "¸"	cedilla # CEDILLA
+<Multi_key> <space> <comma>		: "¸"	cedilla # CEDILLA
+<Multi_key> <comma> <comma>		: "¸"	cedilla # CEDILLA
+<dead_ogonek> <space>			: "˛"	ogonek # OGONEK
+<dead_ogonek> <dead_ogonek>		: "˛"	ogonek # OGONEK
+<dead_iota> <space>			: "ͺ"	U37a # GREEK YPOGEGRAMMENI
+<dead_iota> <dead_iota>			: "ͺ"	U37a # GREEK YPOGEGRAMMENI
+# ASCII characters that may be difficult to access on some keyboards.
+<Multi_key> <plus> <plus>		: "#"	numbersign # NUMBER SIGN
+<Multi_key> <apostrophe> <space>	: "'"	apostrophe # APOSTROPHE
+<Multi_key> <space> <apostrophe>	: "'"	apostrophe # APOSTROPHE
+<Multi_key> <A> <T>			: "@"	at # COMMERCIAL AT
+<Multi_key> <parenleft> <parenleft>	: "["	bracketleft # LEFT SQUARE BRACKET
+<Multi_key> <slash> <slash>		: "\\"	backslash # REVERSE SOLIDUS
+<Multi_key> <slash> <less>		: "\\"	backslash # REVERSE SOLIDUS
+<Multi_key> <less> <slash>		: "\\"	backslash # REVERSE SOLIDUS
+<Multi_key> <parenright> <parenright>	: "]"	bracketright # RIGHT SQUARE BRACKET
+<Multi_key> <asciicircum> <space>	: "^"	asciicircum # CIRCUMFLEX ACCENT
+<Multi_key> <space> <asciicircum>	: "^"	asciicircum # CIRCUMFLEX ACCENT
+<Multi_key> <greater> <space>		: "^"	asciicircum # CIRCUMFLEX ACCENT
+<Multi_key> <space> <greater>		: "^"	asciicircum # CIRCUMFLEX ACCENT
+<Multi_key> <grave> <space>		: "`"	grave # GRAVE ACCENT
+<Multi_key> <space> <grave>		: "`"	grave # GRAVE ACCENT
+<Multi_key> <parenleft> <minus>		: "{"	braceleft # LEFT CURLY BRACKET
+<Multi_key> <minus> <parenleft>		: "{"	braceleft # LEFT CURLY BRACKET
+<Multi_key> <slash> <asciicircum>	: "|"	bar # VERTICAL LINE
+<Multi_key> <asciicircum> <slash>	: "|"	bar # VERTICAL LINE
+<Multi_key> <V> <L>			: "|"	bar # VERTICAL LINE
+<Multi_key> <L> <V>			: "|"	bar # VERTICAL LINE
+<Multi_key> <v> <l>			: "|"	bar # VERTICAL LINE
+<Multi_key> <l> <v>			: "|"	bar # VERTICAL LINE
+<Multi_key> <parenright> <minus>	: "}"	braceright # RIGHT CURLY BRACKET
+<Multi_key> <minus> <parenright>	: "}"	braceright # RIGHT CURLY BRACKET
+<Multi_key> <asciitilde> <space>	: "~"	asciitilde # TILDE
+<Multi_key> <space> <asciitilde>	: "~"	asciitilde # TILDE
+<Multi_key> <L> <T>			: "<"	less # LESS-THAN
+<Multi_key> <l> <t>			: "<"	less # LESS-THAN
+<Multi_key> <G> <T>			: ">"	greater # GREATER-THAN
+<Multi_key> <g> <t>			: ">"	greater # GREATER-THAN
+# Two special spaces
 <Multi_key> <space> <space>		: " "	nobreakspace # NO-BREAK SPACE
-<Multi_key> <h> <h>		: "~"	asciitilde # TILDE
-
+<Multi_key> <space> <period>		: " "	U2008 # PUNCTUATION SPACE
+<Multi_key> <o> <c>			: "©"	copyright # COPYRIGHT SIGN
+<Multi_key> <o> <C>			: "©"	copyright # COPYRIGHT SIGN
+<Multi_key> <O> <c>			: "©"	copyright # COPYRIGHT SIGN
+<Multi_key> <O> <C>			: "©"	copyright # COPYRIGHT SIGN
+<Multi_key> <C> <o>			: "©"	copyright # COPYRIGHT SIGN
+<Multi_key> <C> <O>			: "©"	copyright # COPYRIGHT SIGN
+<Multi_key> <o> <r>			: "®"	registered # REGISTERED SIGN
+<Multi_key> <o> <R>			: "®"	registered # REGISTERED SIGN
+<Multi_key> <O> <r>			: "®"	registered # REGISTERED SIGN
+<Multi_key> <O> <R>			: "®"	registered # REGISTERED SIGN
+<Multi_key> <R> <o>			: "®"	registered # REGISTERED SIGN
+<Multi_key> <R> <O>			: "®"	registered # REGISTERED SIGN
+<Multi_key> <parenleft> <parenright> <parenright>: "🄯"	U1F12F # COPYLEFT SYMBOL
+# Special punctuation
+<Multi_key> <period> <period>		: "…"	ellipsis # HORIZONTAL ELLIPSIS
+<Multi_key> <period> <minus>		: "·"	periodcentered # MIDDLE DOT
+<Multi_key> <period> <asciicircum>	: "·"	periodcentered # MIDDLE DOT
+<Multi_key> <asciicircum> <period>	: "·"	periodcentered # MIDDLE DOT
+<dead_circumflex> <period>		: "·"	periodcentered # MIDDLE DOT
+<Multi_key> <period> <equal>		: "•"	enfilledcircbullet # BULLET
+<Multi_key> <exclam> <asciicircum>	: "¦"	brokenbar # BROKEN BAR
+<Multi_key> <exclam> <exclam>		: "¡"	exclamdown # INVERTED EXCLAMATION MARK
 <Multi_key> <plus> <minus>		: "±"	plusminus # PLUS-MINUS SIGN
 <Multi_key> <minus> <plus>		: "±"	plusminus # PLUS-MINUS SIGN
-
-# Bullets and sections
-<Multi_key> <period> <period>		: "•"	enfilledcircbullet # BULLET
-<Multi_key> <period> <greater>		: "🢒"	# RIGHTWARDS TRIANGLE ARROWHEAD
-<Multi_key> <asterisk> <asterisk> <asterisk>		: "⁂"	asterism # ASTERISM
-<Multi_key> <period> <s>			: "§"	section # SECTION SIGN
-
-# Copyright symbols
-<Multi_key> <c> <c>			: "©"	copyright # COPYRIGHT SIGN
-<Multi_key> <c> <l>     : "🄯"	U1F12F # COPYLEFT SYMBOL
-<Multi_key> <r> <r>			: "®"	registered # REGISTERED SIGN
-
-# Other symbols
-<Multi_key> <equal> <e>			: "€"	EuroSign # EURO SIGN
-<Multi_key> <e> <equal>			: "€"	EuroSign # EURO SIGN
-<Multi_key> <equal> <E>			: "€"	EuroSign # EURO SIGN
-<Multi_key> <E> <equal>			: "€"	EuroSign # EURO SIGN
-
-# Emoji
-<Multi_key> <e> <e>       : "👀" # EYES
-<Multi_key> <e> <t>       : "👍" # THUMBS UP
-<Multi_key> <e> <f>       : "🔥" # FIRE
-<Multi_key> <e> <p>       : "🎉" # PARTY
-<Multi_key> <e> <c>       : "📅" # CALENDAR
-<Multi_key> <e> <v>       : "✅" # CHECK MARK
-<Multi_key> <e> <x>       : "❌" # CROSS MARK
-<Multi_key> <e> <d>       : "📁" # DIRECTORY
-<Multi_key> <e> <g>       : "🇩🇪" # GERMANY FLAG
-
+<Multi_key> <question> <question>	: "¿"	questiondown # INVERTED QUESTION MARK
+<Multi_key> <exclam> <question>		: "‽"	U203D # INTERROBANG
+<Multi_key> <question> <exclam>		: "⸘"	U2E18 # INVERTED INTERROBANG
+<Multi_key> <minus> <minus> <space>	: "­"	U00ad # SOFT HYPHEN
+<Multi_key> <percent> <o>		: "‰"	U2030 # PER MILLE SIGN
+# Some ligatures
+<Multi_key> <a> <e>			: "æ"	ae # LATIN SMALL LETTER AE
+<Multi_key> <A> <E>			: "Æ"	AE # LATIN CAPITAL LETTER AE
+<Multi_key> <o> <e>			: "œ"	oe # LATIN SMALL LIGATURE OE
+<Multi_key> <O> <E>			: "Œ"	OE # LATIN CAPITAL LIGATURE OE
+<Multi_key> <s> <s>			: "ß"	ssharp # LATIN SMALL LETTER SHARP S
+<Multi_key> <S> <S>			: "ẞ"	U1e9e # LATIN CAPITAL LETTER SHARP S
+<Multi_key> <f> <f>			: "ﬀ"	Ufb00 # LATIN SMALL LIGATURE FF
+<Multi_key> <f> <i>			: "ﬁ"	Ufb01 # LATIN SMALL LIGATURE FI
+<Multi_key> <f> <l>			: "ﬂ"	Ufb02 # LATIN SMALL LIGATURE FL
+<Multi_key> <F> <i>			: "ﬃ"	Ufb03 # LATIN SMALL LIGATURE FFI
+<Multi_key> <F> <l>			: "ﬄ"	Ufb04 # LATIN SMALL LIGATURE FFL
+<Multi_key> <i> <j>			: "ĳ"	U0133 # LATIN SMALL LIGATURE IJ
+<Multi_key> <I> <j>			: "Ĳ"	U0132 # LATIN CAPITAL LIGATURE IJ
+<Multi_key> <I> <J>			: "Ĳ"	U0132 # LATIN CAPITAL LIGATURE IJ
+# Quotation marks
+<Multi_key> <less> <less>		: "«"	guillemotleft # LEFT-POINTING DOUBLE ANGLE QUOTATION MARK
+<Multi_key> <greater> <greater>		: "»"	guillemotright # RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK
+<Multi_key> <period> <greater>		: "›"	U203a # SINGLE RIGHT-POINTING ANGLE QUOTATION MARK
+<Multi_key> <period> <less>		: "‹"	U2039 # SINGLE LEFT-POINTING ANGLE QUOTATION MARK
+<Multi_key> <less> <apostrophe>		: "‘"	U2018 # LEFT SINGLE QUOTATION MARK
+<Multi_key> <apostrophe> <less>		: "‘"	U2018 # LEFT SINGLE QUOTATION MARK
+<Multi_key> <greater> <apostrophe>	: "’"	U2019 # RIGHT SINGLE QUOTATION MARK
+<Multi_key> <apostrophe> <greater>	: "’"	U2019 # RIGHT SINGLE QUOTATION MARK
+<Multi_key> <comma> <apostrophe>	: "‚"	U201a # SINGLE LOW-9 QUOTATION MARK
+<Multi_key> <apostrophe> <comma>	: "‚"	U201a # SINGLE LOW-9 QUOTATION MARK
+<Multi_key> <less> <quotedbl>		: "“"	U201c # LEFT DOUBLE QUOTATION MARK
+<Multi_key> <quotedbl> <less>		: "“"	U201c # LEFT DOUBLE QUOTATION MARK
+<Multi_key> <greater> <quotedbl>	: "”"	U201d # RIGHT DOUBLE QUOTATION MARK
+<Multi_key> <quotedbl> <greater>	: "”"	U201d # RIGHT DOUBLE QUOTATION MARK
+<Multi_key> <comma> <quotedbl>		: "„"	U201e # DOUBLE LOW-9 QUOTATION MARK
+<Multi_key> <quotedbl> <comma>		: "„"	U201e # DOUBLE LOW-9 QUOTATION MARK
 # Currencies
 <Multi_key> <C> <E>			: "₠"	U20a0 # EURO-CURRENCY SIGN
 <Multi_key> <C> <slash>			: "₡"	U20a1 # COLON SIGN
@@ -79,6 +167,9 @@
 <Multi_key> <c> <equal>			: "€"	EuroSign # EURO SIGN
 <Multi_key> <equal> <c>			: "€"	EuroSign # EURO SIGN
 <Multi_key> <E> <equal>			: "€"	EuroSign # EURO SIGN
+<Multi_key> <equal> <E>			: "€"	EuroSign # EURO SIGN
+<Multi_key> <e> <equal>			: "€"	EuroSign # EURO SIGN
+<Multi_key> <equal> <e>			: "€"	EuroSign # EURO SIGN
 <Multi_key> <Cyrillic_ES> <equal>	: "€"	EuroSign # EURO SIGN
 <Multi_key> <equal> <Cyrillic_ES>	: "€"	EuroSign # EURO SIGN
 <Multi_key> <Cyrillic_IE> <equal>	: "€"	EuroSign # EURO SIGN
@@ -140,6 +231,7 @@
 <Multi_key> <numbersign> <numbersign>	: "♯"	U266f # MUSIC SHARP SIGN
 # Other symbols
 <Multi_key> <s> <o>			: "§"	section # SECTION SIGN
+<Multi_key> <o> <s>			: "§"	section # SECTION SIGN
 <Multi_key> <S> <O>			: "§"	section # SECTION SIGN
 <Multi_key> <O> <S>			: "§"	section # SECTION SIGN
 <Multi_key> <s> <exclam>		: "§"	section # SECTION SIGN
@@ -507,10 +599,12 @@
 <Multi_key> <period> <c>		: "ċ"	U010B # LATIN SMALL LETTER C WITH DOT ABOVE
 <Multi_key> <c> <period>		: "ċ"	U010B # LATIN SMALL LETTER C WITH DOT ABOVE
 <dead_caron> <C>			: "Č"	U010C # LATIN CAPITAL LETTER C WITH CARON
+<Multi_key> <c> <C>			: "Č"	U010C # LATIN CAPITAL LETTER C WITH CARON
 <Multi_key> <v> <C>			: "Č"	U010C # LATIN CAPITAL LETTER C WITH CARON
 <Multi_key> <less> <C>			: "Č"	U010C # LATIN CAPITAL LETTER C WITH CARON
 <Multi_key> <C> <less>			: "Č"	U010C # LATIN CAPITAL LETTER C WITH CARON
 <dead_caron> <c>			: "č"	U010D # LATIN SMALL LETTER C WITH CARON
+<Multi_key> <c> <c>			: "č"	U010D # LATIN SMALL LETTER C WITH CARON
 <Multi_key> <v> <c>			: "č"	U010D # LATIN SMALL LETTER C WITH CARON
 <Multi_key> <less> <c>			: "č"	U010D # LATIN SMALL LETTER C WITH CARON
 <Multi_key> <c> <less>			: "č"	U010D # LATIN SMALL LETTER C WITH CARON
@@ -698,9 +792,11 @@
 <Multi_key> <l> <comma>			: "ļ"	U013C # LATIN SMALL LETTER L WITH CEDILLA
 <Multi_key> <cedilla> <l>		: "ļ"	U013C # LATIN SMALL LETTER L WITH CEDILLA
 <dead_caron> <L>			: "Ľ"	U013D # LATIN CAPITAL LETTER L WITH CARON
+<Multi_key> <c> <L>			: "Ľ"	U013D # LATIN CAPITAL LETTER L WITH CARON
 <Multi_key> <less> <L>			: "Ľ"	U013D # LATIN CAPITAL LETTER L WITH CARON
 <Multi_key> <L> <less>			: "Ľ"	U013D # LATIN CAPITAL LETTER L WITH CARON
 <dead_caron> <l>			: "ľ"	U013E # LATIN SMALL LETTER L WITH CARON
+<Multi_key> <c> <l>			: "ľ"	U013E # LATIN SMALL LETTER L WITH CARON
 <Multi_key> <less> <l>			: "ľ"	U013E # LATIN SMALL LETTER L WITH CARON
 <Multi_key> <l> <less>			: "ľ"	U013E # LATIN SMALL LETTER L WITH CARON
 <dead_stroke> <L>			: "Ł"	U0141 # LATIN CAPITAL LETTER L WITH STROKE
@@ -2203,8 +2299,10 @@
 <dead_belowmacron> <R>				: "Ṟ"	U1E5E # LATIN CAPITAL LETTER R WITH LINE BELOW
 <dead_belowmacron> <r>				: "ṟ"	U1E5F # LATIN SMALL LETTER R WITH LINE BELOW
 <dead_abovedot> <S>				: "Ṡ"	U1E60 # LATIN CAPITAL LETTER S WITH DOT ABOVE
+<Multi_key> <period> <S>			: "Ṡ"	U1E60 # LATIN CAPITAL LETTER S WITH DOT ABOVE
 <Multi_key> <S> <period>			: "Ṡ"	U1E60 # LATIN CAPITAL LETTER S WITH DOT ABOVE
 <dead_abovedot> <s>				: "ṡ"	U1E61 # LATIN SMALL LETTER S WITH DOT ABOVE
+<Multi_key> <period> <s>			: "ṡ"	U1E61 # LATIN SMALL LETTER S WITH DOT ABOVE
 <Multi_key> <s> <period>			: "ṡ"	U1E61 # LATIN SMALL LETTER S WITH DOT ABOVE
 <dead_belowdot> <S>				: "Ṣ"	U1E62 # LATIN CAPITAL LETTER S WITH DOT BELOW
 <Multi_key> <exclam> <S>			: "Ṣ"	U1E62 # LATIN CAPITAL LETTER S WITH DOT BELOW
@@ -2255,7 +2353,9 @@
 <Multi_key> <period> <t>			: "ṫ"	U1E6B # LATIN SMALL LETTER T WITH DOT ABOVE
 <Multi_key> <t> <period>			: "ṫ"	U1E6B # LATIN SMALL LETTER T WITH DOT ABOVE
 <dead_belowdot> <T>				: "Ṭ"	U1E6C # LATIN CAPITAL LETTER T WITH DOT BELOW
+<Multi_key> <exclam> <T>			: "Ṭ"	U1E6C # LATIN CAPITAL LETTER T WITH DOT BELOW
 <dead_belowdot> <t>				: "ṭ"	U1E6D # LATIN SMALL LETTER T WITH DOT BELOW
+<Multi_key> <exclam> <t>			: "ṭ"	U1E6D # LATIN SMALL LETTER T WITH DOT BELOW
 <dead_belowmacron> <T>				: "Ṯ"	U1E6E # LATIN CAPITAL LETTER T WITH LINE BELOW
 <dead_belowmacron> <t>				: "ṯ"	U1E6F # LATIN SMALL LETTER T WITH LINE BELOW
 <dead_belowcircumflex> <T>			: "Ṱ"	U1E70 # LATIN CAPITAL LETTER T WITH CIRCUMFLEX BELOW
@@ -2305,6 +2405,9 @@
 <dead_tilde> <v>				: "ṽ"	U1E7D # LATIN SMALL LETTER V WITH TILDE
 <Multi_key> <asciitilde> <v>			: "ṽ"	U1E7D # LATIN SMALL LETTER V WITH TILDE
 <dead_belowdot> <V>				: "Ṿ"	U1E7E # LATIN CAPITAL LETTER V WITH DOT BELOW
+<Multi_key> <exclam> <V>			: "Ṿ"	U1E7E # LATIN CAPITAL LETTER V WITH DOT BELOW
+<dead_belowdot> <v>				: "ṿ"	U1E7F # LATIN SMALL LETTER V WITH DOT BELOW
+<Multi_key> <exclam> <v>			: "ṿ"	U1E7F # LATIN SMALL LETTER V WITH DOT BELOW
 <dead_grave> <W>				: "Ẁ"	U1E80 # LATIN CAPITAL LETTER W WITH GRAVE
 <Multi_key> <grave> <W>				: "Ẁ"	U1E80 # LATIN CAPITAL LETTER W WITH GRAVE
 <dead_grave> <w>				: "ẁ"	U1E81 # LATIN SMALL LETTER W WITH GRAVE
@@ -4368,10 +4471,12 @@
 <Multi_key> <KP_Divide> <rightarrow>	: "↛"	U219B # RIGHTWARDS ARROW WITH STROKE
 <Multi_key> <slash> <U2194>		: "↮"	U21AE # LEFT RIGHT ARROW WITH STROKE
 <Multi_key> <KP_Divide> <U2194>		: "↮"	U21AE # LEFT RIGHT ARROW WITH STROKE
+<Multi_key> <less> <minus>		: "←"	U2190 # LEFTWARDS ARROW
 <Multi_key> <bar> <dead_circumflex>	: "↑"	U2191 # UPWARDS ARROW
 <Multi_key> <dead_circumflex> <bar>	: "↑"	U2191 # UPWARDS ARROW
 <Multi_key> <bar> <asciicircum>		: "↑"	U2191 # UPWARDS ARROW
 <Multi_key> <asciicircum> <bar>		: "↑"	U2191 # UPWARDS ARROW
+<Multi_key> <minus> <greater>		: "→"	U2192 # RIGHTWARDS ARROW
 <Multi_key> <bar> <v>			: "↓"	U2193 # DOWNWARDS ARROW
 <Multi_key> <v> <bar>			: "↓"	U2193 # DOWNWARDS ARROW
 <Multi_key> <equal> <less>		: "⇐"	U21D0 # LEFTWARDS DOUBLE ARROW
