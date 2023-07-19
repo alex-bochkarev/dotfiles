@@ -1,0 +1,11 @@
+profile RPTU {
+        output "Unknown 0x0924 0x00000000" mode 1920x1080@60.000Hz position 2970,160
+        output "Goldstar Company Ltd 24MB37 704NTPC7R984" mode 1920x1080@60.000Hz position 1050,160
+        output "Dell Inc. DELL 2209WA H735H95M0LKL" mode 1680x1050@59.954Hz position 0,0 transform 90
+
+        exec swaymsg workspace 1, move workspace to '"Dell Inc. DELL U2518D 3C4YP8BH043L"'
+        exec swaymsg workspace 2, move workspace to '"Goldstar Company Ltd 24MB37 704NTPC7R984"'
+        exec swaymsg workspace 3, move workspace to '"Unknown 0x0924 0x00000000"'
+        exec swaymsg workspace 4, move workspace to '"Goldstar Company Ltd 24MB37 704NTPC7R984"'
+        exec swaymsg workspace 6, move workspace to '"Goldstar Company Ltd 24MB37 704NTPC7R984"'
+}

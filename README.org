@@ -70,7 +70,7 @@ but it seems a little too much effort, at the moment.
    - sway
    - waybar
    - wob for overlay bars
-   - wdisplays for monitors setup
+   - wdisplays and kanshi for monitors setup
    - ulauncher (PPA) + extensions
 
 ** Spacemacs-based setup

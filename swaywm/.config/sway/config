@@ -216,13 +216,16 @@ bindsym $mod+grave mode "$mode_off"
 # Start the statusbar
 exec_always sh -c "killall waybar; ~/opt/Waybar/build/waybar &"
 
-# autostart applications
+# autostart applications / start up config
 exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP=sway XDG_SESSION_DESKTOP=sway
 set $WOBSOCK /tmp/wobpipe
 exec rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob
 exec --no-startup-id "eval $(ssh-agent -s)"
 exec --no-startup-id dunst
 exec --no-startup-id element-desktop
+
+# auto-detect and config displays
+exec_always pkill kanshi; exec kanshi
 
 # keep clipboard after closing a window (see https://wiki.archlinux.org/title/sway)
 exec wl-paste -t text --watch clipman store --no-persist
