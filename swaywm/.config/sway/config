@@ -238,6 +238,9 @@ exec --no-startup-id dropbox start
 exec_always --no-startup-id exec setxkbmap -option 'grp:rctrl_toggle,caps:hyper' 'us,us' && sleep 2
 exec_always --no-startup-id exec xmodmap ~/.Xmodmap && sleep 1
 
+# set up mic volume (I am doing it every time anyways)
+exec --no-startup-id amixer set Capture 30
+
 # set wallpaper
 output "*" bg ~/.wallpapers/IMG_1490.JPG fill
 
