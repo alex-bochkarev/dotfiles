@@ -1,4 +1,10 @@
 #!/bin/env bash
 
-backup-home.sh /media/bochkarev/187851217850FEC6/homebox-backups $1
-borg-cleanup.sh /media/bochkarev/187851217850FEC6/homebox-backups
+BACKUPDIR=/media/backup/$(uname -n)-backups
+if [ ! -d $BACKUPDIR ]; then
+    echo "Backups directory not found: '$BACKUPDIR', trying to mount the drive..."
+    mount /media/backup || exit 1
+fi
+
+backup-home.sh /media/backup/$(uname -n)-backups $1
+borg-cleanup.sh /media/backup/$(uname -n)-backups

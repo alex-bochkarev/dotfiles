@@ -38,8 +38,8 @@ default_floating_border none
 default_border pixel 3
 
 # i3-gaps specific
-gaps inner 8
-gaps outer 8
+gaps inner 10
+gaps outer 10
 smart_borders on
 
 # class                 border      backgr.     text    indicator child_border
@@ -237,9 +237,6 @@ exec --no-startup-id dropbox start
 # exec --no-startup-id ~/.local/bin/emacs --daemon
 exec_always --no-startup-id exec setxkbmap -option 'grp:rctrl_toggle,caps:hyper' 'us,us' && sleep 2
 exec_always --no-startup-id exec xmodmap ~/.Xmodmap && sleep 1
-
-# set up mic volume (I am doing it every time anyways)
-exec --no-startup-id amixer set Capture 30
 
 # set wallpaper
 output "*" bg ~/.wallpapers/IMG_1490.JPG fill
