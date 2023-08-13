@@ -1,7 +1,26 @@
 #!/bin/bash
+TEMPFOLDER=$HOME/tmp
+DESTFOLDER=/media/$(whoami)/QuickStick/backups/
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+COLOFF='\033[0m'
+ERR="${RED}ERROR:${COLOFF}"
+INFO="${GREEN}INFO:${COLOFF}"
+
+if [ ! -d $DESTFOLDER ]; then
+    echo -e "${ERR} Backups directory not found: '$DESTFOLDER', make sure the drive is mounted!"
+    exit 1
+fi
+
+if [ ! -d $TEMPFOLDER ]; then
+    echo -e "${ERR} temp directory not found: '$TEMPFOLDER', make sure the drive is mounted!"
+    exit 1
+fi
+
 stamp=$(date +%Y%m%d)
-fname=./$stamp-backup.tar.bz2
-tar -cvjf $fname ~/.gnupg ~/.password-store && gpg --output ./$stamp-back.up --symmetric $fname
+fname=$TEMPFOLDER/stamp-backup.tar.bz2
+tar -cvjf $fname ~/.gnupg ~/.password-store && gpg --output $1/$stamp-back.up --symmetric $fname || echo -e "$ERR tar failed."
 rm $fname
 
-ls ./$stamp-back.up
+ls $DESTFOLDER/$stamp-back.up

@@ -1,0 +1,41 @@
+#!/bin/bash
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+COLOFF='\033[0m'
+ERR="${RED}ERROR:${COLOFF}"
+INFO="${GREEN}INFO:${COLOFF}"
+
+# Note: dotfiles (including emacs)
+#       are in separate git repos
+
+DESTFOLDER=/media/$(whoami)/QuickStick/backups/
+LOGFILE=$DESTFOLDER/backup.log
+
+# A list of paths to backup
+
+FILES="$HOME/.authinfo.gpg
+$HOME/org
+$HOME/PKB/notes
+$HOME/PKB/email
+$HOME/PKB/sources/zotero_lib
+$HOME/personal
+$HOME/events
+$HOME/Documents"
+
+if [ ! -d "$DESTFOLDER" ]; then
+    echo -e "${ERR} Backups directory not found: '${DESTFOLDER}'. Make sure the drive is mounted!"
+    exit 1
+fi
+
+echo -e "$INFO Writing logs to $LOGFILE."
+
+echo -e "$INFO Running backups on $(date +%Y-%m-%d-%H:%M)" >> "$LOGFILE"
+echo -e "$INFO Backing up GPG." >> "$LOGFILE"
+backup-gpg "$DESTFOLDER" >> "$LOGFILE"
+
+for SRCPATH in $FILES
+do
+    echo -e "$INFO Copying $SRCPATH..."
+    rsync --delete --exclude .git/ --log-file "$LOGFILE" -av "$SRCPATH" "$DESTFOLDER" && echo "✅ OK" || echo -e "${ERR} rsyncing ${SRCPATH} failed."
+done
