@@ -222,6 +222,8 @@ set $WOBSOCK /tmp/wobpipe
 exec rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob
 exec --no-startup-id "eval $(ssh-agent -s)"
 exec --no-startup-id dunst
+exec --no-startup-id syncthing-gtk
+exec --no-startup-id seafile-applet
 exec --no-startup-id element-desktop
 
 # auto-detect and config displays

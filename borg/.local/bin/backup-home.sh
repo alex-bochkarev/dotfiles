@@ -1,5 +1,7 @@
 #!/bin/env bash
 
+export BORG_PASSCOMMAND="gpg -q -u aabochkaryov@gmail.com --batch --decrypt $HOME/.password-store/house/borg-workbox.gpg"
+
 borg create \
      --stats \
      --verbose \

@@ -1,0 +1,8 @@
+#!/bin/env bash
+# -*- mode: sh -*-
+
+set -e
+
+backup daily
+
+systemctl poweroff

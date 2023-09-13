@@ -1,10 +1,16 @@
 #!/bin/env bash
-
+DRIVE_UUID=187851217850FEC6
 BACKUPDIR=/media/backup/$(uname -n)-backups
+
+set -e
+
 if [ ! -d $BACKUPDIR ]; then
     echo "Backups directory not found: '$BACKUPDIR', trying to mount the drive..."
-    mount /media/backup || exit 1
+    (DEVICE=$(findfs UUID=$DRIVE_UUID) && udisksctl mount -b $DEVICE) || (echo "ERROR: Couldn't mount /media/backup"; exit 1)
+    echo "Success! Proceeding with the backup..."
 fi
 
 backup-home.sh /media/backup/$(uname -n)-backups $1
 borg-cleanup.sh /media/backup/$(uname -n)-backups
+
+umount /media/backup
