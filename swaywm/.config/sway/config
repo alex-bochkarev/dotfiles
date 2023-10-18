@@ -243,26 +243,31 @@ exec_always --no-startup-id exec xmodmap ~/.Xmodmap && sleep 1
 # set wallpaper
 output "*" bg ~/.wallpapers/IMG_1490.JPG fill
 
-# emacs-specific behavior
-for_window [urgent="latest" class="emacs.Emacs"] focus
-for_window [title="emacs-float"] floating enable
-for_window [title="ncmpcpp-window"] floating enable
-for_window [title="folder-jump"] floating enable
-for_window [class="URxvt" instance="URxvtFuzzy"] floating enable, border pixel 5
-for_window [instance="mainframe" title="mainframe"] move to workspace $ws1
+# tiling setup
+for_window {
+        # emacs-specific behavior
+        [urgent="latest" class="emacs.Emacs"] focus
+        [title="emacs-float"] floating enable
+        [title="ncmpcpp-window"] floating enable
+        [title="folder-jump"] floating enable
+        [class="URxvt" instance="URxvtFuzzy"] floating enable, border pixel 5
+        [instance="mainframe" title="mainframe"] move to workspace $ws1
 
-# floating defaults
-for_window [title="FuzzyWindow"] floating enable
-for_window [title="Skype"] floating enable
-for_window [title="Bluetooth Devices"] floating enable
-for_window [title="Volume Control"] floating enable
-for_window [title="Reminders"] floating enable
-for_window [class="Nemo"] floating enable
-for_window [app_id="org.gnome.Nautilus"] floating enable
-for_window [class="Xfce4-display-settings"] floating enable
-for_window [app_id="wdisplays"] floating enable
+        # floating defaults
+        [title="FuzzyWindow"] floating enable
+        [title="Skype"] floating enable
+        [title="Bluetooth Devices"] floating enable
+        [title="Volume Control"] floating enable
+        [title="Reminders"] floating enable
+        [class="Nemo"] floating enable
+        [app_id="org.gnome.Nautilus"] floating enable
+        [class="Xfce4-display-settings"] floating enable
+        [app_id="wdisplays"] floating enable
+        [title="FloatingTerm"] floating enable
 
-for_window [title="FloatingTerm"] floating enable
+        # xfig-specific
+        [class="Fig"] floating enable
+}
 
 # user keybindings # the scratchpad
 bindsym $mod+BackSpace scratchpad show
@@ -291,8 +296,8 @@ bindsym $mod+y exec "~/.local/bin/fuzzy_win_sway ~/.local/bin/fzf-go-emacs.sh"
 bindsym $mod+apostrophe exec ".local/bin/sway-screenshot.sh"
 bindsym $mod+Shift+apostrophe exec ".local/bin/sway-screenshot-copy.sh"
 
-bindsym $mod+m exec gnome-terminal -t=FloatingTerm -e "ncmpcpp"
-bindsym $mod+n exec ~/.local/bin/emacsclient -cF '((name . "emacs-float") (width . 70) (height . 25))' -e '(spacemacs/deft)'
+#bindsym $mod+m exec gnome-terminal -t=FloatingTerm -e "ncmpcpp"
+#bindsym $mod+n exec ~/.local/bin/emacsclient -cF '((name . "emacs-float") (width . 100) (height . 50))' -e '(org-roam-node-find)'
 bindsym $mod+r exec "rofi -show drun"
 bindsym $mod+x exec "dmenu_run -p 'M-x'"
 bindsym $mod+p exec "~/.local/bin/fuzzy_win_sway ~/.local/bin/fzf-pass.sh"
@@ -303,6 +308,9 @@ bindsym $mod+z exec ulauncher-toggle
 bindsym $mod+Shift+z exec emacsclient -nc -a "" -F '((name . "emacs-float") (width . 100) (height . 50))'
 bindsym $mod+b exec firefox
 bindsym $mod+t exec google-chrome --new-window --app=https://deepl.com
+
+bindsym $mod+m [class="Emacs"] focus
+bindsym $mod+n [class="firefox"] focus
 
 # https://wiki.archlinux.org/title/sway
 include /etc/sway/config.d/*
