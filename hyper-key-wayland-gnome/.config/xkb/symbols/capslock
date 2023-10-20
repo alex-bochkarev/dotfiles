@@ -1,4 +1,5 @@
 xkb_symbols "hyper" {
-    key <CAPS> { [ Hyper_L ] };
-    modifier_map Mod3 { <CAPS> };
+    key <LCTL> { [ Hyper_L ] };
+    modifier_map Mod3 { <LCTL> };
+    key <CAPS> { [ Control_L ] };
 };
