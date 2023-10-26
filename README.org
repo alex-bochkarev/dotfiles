@@ -5,24 +5,27 @@ machine configuration (so that I could rebuild it quickly if necessary).
 
 There are several folders relevant to the config, to keep everything tidy:
 
- | Folder                     | Description                               |
- |----------------------------+-------------------------------------------|
- | .config/                   | All config files and aux scripts          |
- | ⎣ spacemacs.d/             | Emacs configuration, from [[https://github.com/alex-bochkarev/my-spacemacs-dotfiles][a separate repo]] |
- | ⎣ ...                      | (everything else)                         |
- | .screenlayout/             | Screen layouts for =arandr=               |
- | .local/bin/                | Symlinks to user-level executable files   |
- | .icons/                    | Icons folder                              |
- | .themes/                   | Theme folder                              |
- | .fonts/                    | Fonts folder                              |
- | .mail/                     | Mail storage                              |
- | .local/share/applications/ | Apps' =.desktop= files                    |
- | Downloads/                 | Download folder (temporary)               |
- | opt/                       | Downloaded and installed programs         |
- | .cdg_paths                 | User dir bookmarks                        |
+ | Folder                     | Description                                    |
+ |----------------------------+------------------------------------------------|
+ | .config/                   | All config files and aux scripts               |
+ | ⎣ spacemacs.d/             | Spacemacs configuration, from [[https://github.com/alex-bochkarev/my-spacemacs-dotfiles][a separate repo]]  |
+ | ⎣ doom.d/                  | Doom emacs configuration, from [[https://github.com/alex-bochkarev/doom-config][a separate repo]] |
+ | ⎣ ...                      | (everything else)                              |
+ | .screenlayout/             | Screen layouts for =arandr=                    |
+ | .local/                    | Symlinks and locally compiled software         |
+ | .icons/                    | Icons folder                                   |
+ | .themes/                   | Theme folder                                   |
+ | .fonts/                    | Fonts folder                                   |
+ | .mail/                     | Mail storage                                   |
+ | .local/share/applications/ | Apps' =.desktop= files                         |
+ | Downloads/                 | Download folder (temporary)                    |
+ | opt/                       | Downloaded and installed programs              |
+ | .cdg_paths                 | User dir bookmarks                             |
 
  I switched to managing my configuration with a separate repo and [[https://www.gnu.org/software/stow/][GNU Stow]],
  which seems to be really handy. (Got the idea from [[https://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html][here]].)
+
+ Keyboard customization for Wayland lives [[file:hyper-key-wayland-gnome/.config/xkb/symbols/capslock][here]].
 
 App sources (besides =snap=/=flatpak=) in the description below are annotated as
 follows:
@@ -34,11 +37,11 @@ follows:
  | PPA     | A 3rd-party PPA (for Ubuntu-based system) |
 
 * Research and development stack
-  Obviously, aside from Emacs, I use the following tools:
+  Aside from Emacs, I use the following tools:
   - Zotero and Zotero-connector (release) for literature management
   - org-roam (git) for extensive notes within Emacs
   - texlive (distro)
-  - inkscape (distro)
+  - inkscape, xfig (distro) for figures
   - R, cpp (distro)
   - julia (release)
   - python3 (distro) + python3-pip (distro). (I switched from =conda= to =pip=.)
@@ -75,11 +78,11 @@ but it seems a little too much effort, at the moment.
 
 ** Spacemacs-based setup
    - Emacs (git, built from source)
-   - Spacemacs (git, development branch)
+   - Doom emacs
 
 ** Web browser
-   - qutebrowser (git)
-   - firefox, chromium (distro); if something doesn't work in qute
+   - firefox, chromium (distro)
+   - qutebrowser (git), occasionally
 
 ** Email stack (in Emacs)
     - isync (mbsync) (distro)
@@ -90,7 +93,7 @@ but it seems a little too much effort, at the moment.
 ** Other utils
    - backups with borg-backup
    - shell: zsh + OhMyZsh
-   - terminal: xfce default terminal, alacritty, urxvt
+   - terminal: gnome-terminal, xfce default terminal, alacritty, urxvt
    - PDF: zathura, evince, atril
    - images: gthumb, sxiv, feh, gimp
    - file mgt: thunar, ranger, spacefm
