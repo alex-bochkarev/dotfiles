@@ -1,0 +1,4 @@
+#!/bin/env bash
+
+killall waybar
+~/opt/Waybar/build/waybar

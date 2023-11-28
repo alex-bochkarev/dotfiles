@@ -6,7 +6,7 @@
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad", "custom/media", "sway/window"],
-    "modules-center": ["clock#Home", "clock#NY", "sway/language"],
+    "modules-center": ["clock#Home", "clock#NY", "custom/demonic", "sway/language"],
     "modules-right": ["idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "battery",  "tray"],
     // Modules configuration
     // "sway/workspaces": {
@@ -172,6 +172,11 @@
         "escape": true,
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-    }
+    },
+    "custom/demonic": {
+        "exec": "~/.local/bin/waybar-demonic-presence",
+        "return-type": "json",
+        "restart-interval" : 1,
+        }
 }
 

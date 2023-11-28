@@ -1,0 +1,40 @@
+#!/bin/env bash
+
+function get-focused-window()
+{
+    swaymsg -t get_tree | jq -r ".. | select(.focused? == true).window_properties.class"
+}
+
+function sway-switch()
+{
+    swaymsg focus "$1"
+}
+
+function emacs-switch()
+{
+    ~/.local/bin/emacsclient -e "(evil-window-$1 1)"
+}
+
+function perform-switch()
+{
+    local focused_window_class
+    focused_window_class=$(get-focused-window)
+    if [ "$focused_window_class" = "Emacs" ]; then
+        emacs-switch "$1"
+        local result=$?
+        if [ $result -ne 0 ]; then
+            sway-switch "$1"
+        fi
+    else
+        sway-switch "$1"
+    fi
+}
+
+case "$1" in
+    left) ;&
+    right) ;&
+    up) ;&
+    down)
+        perform-switch "$1";;
+    *) echo "$1: command not found ('left/right/up/down' expected)";;
+esac

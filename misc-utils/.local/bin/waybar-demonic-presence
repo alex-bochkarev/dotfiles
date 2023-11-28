@@ -1,0 +1,4 @@
+#!/bin/env bash
+
+emacsclient -a false -e 't' &> /dev/null && \
+            echo '{"text": "👹", "tooltip": "Hight d(a)emonic presence."}' || echo '{"text": "⛪", "tooltip": "No (Emacs) daemons detected."}'

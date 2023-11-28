@@ -69,15 +69,15 @@ bindsym $mod+d exec dmenu_run
 
 bindsym --to-code {
     # changing windows
-    $mod+h focus left
-    $mod+j focus down
-    $mod+k focus up
-    $mod+l focus right
+    $mod+h exec "~/.local/bin/sway-navigate-emacs left"
+    $mod+j exec "~/.local/bin/sway-navigate-emacs down"
+    $mod+k exec "~/.local/bin/sway-navigate-emacs up"
+    $mod+l exec "~/.local/bin/sway-navigate-emacs right"
 
-    $mod+Left focus left
-    $mod+Down focus down
-    $mod+Up focus up
-    $mod+Right focus right
+    $mod+Left "~/.local/bin/sway-navigate-emacs left"
+    $mod+Down "~/.local/bin/sway-navigate-emacs down"
+    $mod+Up "~/.local/bin/sway-navigate-emacs up"
+    $mod+Right "~/.local/bin/sway-navigate-emacs right"
 
     # moving windows
     $mod+Shift+Left move left
@@ -214,7 +214,7 @@ bindsym $mod+Escape mode "$mode_off"
 bindsym $mod+grave mode "$mode_off"
 
 # Start the statusbar
-exec_always sh -c "killall waybar; ~/opt/Waybar/build/waybar &"
+exec_always "~/.local/bin/start_waybar"
 
 # autostart applications / start up config
 exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP=sway XDG_SESSION_DESKTOP=sway
@@ -236,7 +236,7 @@ exec --no-startup-id pulseaudio
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 # exec --no-startup-id dropbox start
-# exec --no-startup-id ~/.local/bin/emacs --daemon
+exec --no-startup-id ~/.local/bin/emacs --daemon
 exec_always --no-startup-id exec setxkbmap -option 'grp:rctrl_toggle,caps:hyper' 'us,us' && sleep 2
 exec_always --no-startup-id exec xmodmap ~/.Xmodmap && sleep 1
 
@@ -293,6 +293,7 @@ bindsym $mod+bracketright move workspace to output right
 bindsym $mod+u exec "~/.local/bin/rofimoji -f emojis math arrows ~/.config/rofimoji/data/favorites"
 bindsym $mod+g exec "~/.local/bin/fuzzy_win_sway ~/.local/bin/fzf-go.sh"
 bindsym $mod+y exec "~/.local/bin/fuzzy_win_sway ~/.local/bin/fzf-go-emacs.sh"
+bindsym $mod+backslash exec "~/.local/bin/emacsclient -nc"
 bindsym $mod+apostrophe exec ".local/bin/sway-screenshot.sh"
 bindsym $mod+Shift+apostrophe exec ".local/bin/sway-screenshot-copy.sh"
 
