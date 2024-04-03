@@ -7,7 +7,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode", "sway/scratchpad", "custom/media", "sway/window"],
     "modules-center": ["clock#Home", "clock#NY", "custom/demonic", "sway/language"],
-    "modules-right": ["idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "battery",  "tray"],
+    "modules-right": ["idle_inhibitor", "pulseaudio", "disk", "cpu", "memory", "temperature", "backlight", "battery",  "tray"],
     // Modules configuration
     // "sway/workspaces": {
     //     "disable-scroll": true,
@@ -138,6 +138,11 @@
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "disk": {
+        "interval": 30,
+        "format": "{specific_free:0.1f} free / {specific_total:0.1f} GB",
+        "unit": "GB"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float

@@ -213,9 +213,6 @@ mode "$mode_off" {
 bindsym $mod+Escape mode "$mode_off"
 bindsym $mod+grave mode "$mode_off"
 
-# Start the statusbar
-exec_always "~/.local/bin/start_waybar"
-
 # autostart applications / start up config
 exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP=sway XDG_SESSION_DESKTOP=sway
 set $WOBSOCK /tmp/wobpipe
@@ -242,6 +239,9 @@ exec_always --no-startup-id exec xmodmap ~/.Xmodmap && sleep 1
 
 # set wallpaper
 output "*" bg ~/.wallpapers/IMG_1490.JPG fill
+
+# Start the statusbar
+exec_always --no-startup-id "~/.local/bin/start_waybar"
 
 # tiling setup
 for_window {
@@ -310,6 +310,7 @@ bindsym $mod+Shift+z exec emacsclient -nc -a "" -F '((name . "emacs-float") (wid
 bindsym $mod+b exec firefox
 bindsym $mod+t exec google-chrome --new-window --app=https://deepl.com
 
+bindsym $mod+c exec "gnome-terminal -- khal interactive && sleep 1-"
 bindsym $mod+m [class="Emacs"] focus
 bindsym $mod+n [class="firefox"] focus
 
