@@ -5,89 +5,89 @@
 # http://www.ict4g.net/adolfo/notes/2014/12/27/EmacsIMAP.html
 
 # ACCOUNT INFORMATION
-IMAPAccount CU-gmail
-# Address to connect to
-Host imap.gmail.com
-User abochka@g.clemson.edu
-PassCmd "gpg -q --for-your-eyes-only --no-tty -d ~/.password-store/Clemson/email.gpg | head -1"
-AuthMechs LOGIN
-SSLType IMAPS
-SSLVersions TLSv1.2
-CertificateFile /etc/ssl/certs/ca-certificates.crt
+# IMAPAccount CU-gmail
+# # Address to connect to
+# Host imap.gmail.com
+# User abochka@g.clemson.edu
+# PassCmd "gpg -q --for-your-eyes-only --no-tty -d ~/.password-store/Clemson/email.gpg | head -1"
+# AuthMechs LOGIN
+# SSLType IMAPS
+# SSLVersions TLSv1.2
+# CertificateFile /etc/ssl/certs/ca-certificates.crt
 
-# THEN WE SPECIFY THE LOCAL AND REMOTE STORAGE
-# - THE REMOTE STORAGE IS WHERE WE GET THE MAIL FROM (E.G., THE
-#   SPECIFICATION OF AN IMAP ACCOUNT)
-# - THE LOCAL STORAGE IS WHERE WE STORE THE EMAIL ON OUR COMPUTER
+# # THEN WE SPECIFY THE LOCAL AND REMOTE STORAGE
+# # - THE REMOTE STORAGE IS WHERE WE GET THE MAIL FROM (E.G., THE
+# #   SPECIFICATION OF AN IMAP ACCOUNT)
+# # - THE LOCAL STORAGE IS WHERE WE STORE THE EMAIL ON OUR COMPUTER
 
-# REMOTE STORAGE (USE THE IMAP ACCOUNT SPECIFIED ABOVE)
-IMAPStore CU-gmail-remote
-Account CU-gmail
+# # REMOTE STORAGE (USE THE IMAP ACCOUNT SPECIFIED ABOVE)
+# IMAPStore CU-gmail-remote
+# Account CU-gmail
 
-# LOCAL STORAGE (CREATE DIRECTORIES with mkdir -p ~/Maildir/acc1-gmail)
-MaildirStore CU-gmail-local
-Path ~/.mail/CU/
-Inbox ~/.mail/CU/INBOX
-# REQUIRED ONLY IF YOU WANT TO DOWNLOAD ALL SUBFOLDERS; SYNCING SLOWS DOWN
-# SubFolders Verbatim
+# # LOCAL STORAGE (CREATE DIRECTORIES with mkdir -p ~/Maildir/acc1-gmail)
+# MaildirStore CU-gmail-local
+# Path ~/.mail/CU/
+# Inbox ~/.mail/CU/INBOX
+# # REQUIRED ONLY IF YOU WANT TO DOWNLOAD ALL SUBFOLDERS; SYNCING SLOWS DOWN
+# # SubFolders Verbatim
 
-# CONNECTIONS SPECIFY LINKS BETWEEN REMOTE AND LOCAL FOLDERS
-#
-# CONNECTIONS ARE SPECIFIED USING PATTERNS, WHICH MATCH REMOTE MAIl
-# FOLDERS. SOME COMMONLY USED PATTERS INCLUDE:
-#
-# 1 "*" TO MATCH EVERYTHING
-# 2 "!DIR" TO EXCLUDE "DIR"
-# 3 "DIR" TO MATCH DIR
+# # CONNECTIONS SPECIFY LINKS BETWEEN REMOTE AND LOCAL FOLDERS
+# #
+# # CONNECTIONS ARE SPECIFIED USING PATTERNS, WHICH MATCH REMOTE MAIl
+# # FOLDERS. SOME COMMONLY USED PATTERS INCLUDE:
+# #
+# # 1 "*" TO MATCH EVERYTHING
+# # 2 "!DIR" TO EXCLUDE "DIR"
+# # 3 "DIR" TO MATCH DIR
 
-Channel CU-gmail-inbox
-Far :CU-gmail-remote:
-Near :CU-gmail-local:
-Patterns "INBOX"
-Create Both
-Expunge Both
-SyncState *
+# Channel CU-gmail-inbox
+# Far :CU-gmail-remote:
+# Near :CU-gmail-local:
+# Patterns "INBOX"
+# Create Both
+# Expunge Both
+# SyncState *
 
-Channel CU-gmail-trash
-Far :CU-gmail-remote:"[Gmail]/Trash"
-Near :CU-gmail-local:"Trash"
-Create Both
-Expunge Both
-SyncState *
+# Channel CU-gmail-trash
+# Far :CU-gmail-remote:"[Gmail]/Trash"
+# Near :CU-gmail-local:"Trash"
+# Create Both
+# Expunge Both
+# SyncState *
 
-Channel CU-gmail-sent
-Far :CU-gmail-remote:"[Gmail]/Sent Mail"
-Near :CU-gmail-local:"Sent"
-Create Both
-Expunge Both
-SyncState *
+# Channel CU-gmail-sent
+# Far :CU-gmail-remote:"[Gmail]/Sent Mail"
+# Near :CU-gmail-local:"Sent"
+# Create Both
+# Expunge Both
+# SyncState *
 
-Channel CU-gmail-all
-Far :CU-gmail-remote:"[Gmail]/All Mail"
-Near :CU-gmail-local:"Archive"
-Create Both
-Expunge Both
-SyncState *
+# Channel CU-gmail-all
+# Far :CU-gmail-remote:"[Gmail]/All Mail"
+# Near :CU-gmail-local:"Archive"
+# Create Both
+# Expunge Both
+# SyncState *
 
-Channel CU-gmail-starred
-Far :CU-gmail-remote:"[Gmail]/Starred"
-Near :CU-gmail-local:"Starred"
-Create Both
-Expunge Both
-SyncState *
+# Channel CU-gmail-starred
+# Far :CU-gmail-remote:"[Gmail]/Starred"
+# Near :CU-gmail-local:"Starred"
+# Create Both
+# Expunge Both
+# SyncState *
 
-# GROUPS PUT TOGETHER CHANNELS, SO THAT WE CAN INVOKE
-# MBSYNC ON A GROUP TO SYNC ALL CHANNELS
-#
-# FOR INSTANCE: "mbsync gmail" GETS MAIL FROM
-# "gmail-inbox", "gmail-sent", and "gmail-trash"
-#
-Group CU-gmail
-Channel CU-gmail-inbox
-Channel CU-gmail-sent
-Channel CU-gmail-trash
-Channel CU-gmail-all
-Channel CU-gmail-starred
+# # GROUPS PUT TOGETHER CHANNELS, SO THAT WE CAN INVOKE
+# # MBSYNC ON A GROUP TO SYNC ALL CHANNELS
+# #
+# # FOR INSTANCE: "mbsync gmail" GETS MAIL FROM
+# # "gmail-inbox", "gmail-sent", and "gmail-trash"
+# #
+# Group CU-gmail
+# Channel CU-gmail-inbox
+# Channel CU-gmail-sent
+# Channel CU-gmail-trash
+# Channel CU-gmail-all
+# Channel CU-gmail-starred
 
 # =============== end of Gmail configuration =====================================
 
