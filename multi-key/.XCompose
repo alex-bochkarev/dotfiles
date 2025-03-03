@@ -30,7 +30,7 @@
 # Bullets and sections
 <Multi_key> <period> <period>		: "•"	enfilledcircbullet # BULLET
 <Multi_key> <period> <greater>	: "🢒"	# RIGHTWARDS TRIANGLE ARROWHEAD
-<Multi_key> <period> <asterisk> : "⁂"	asterism # ASTERISM
+<Multi_key> <period> <asterisk> : "⁂"	U2042 # ASTERISM
 <Multi_key> <period> <s>		    : "§"	section # SECTION SIGN
 
 # Copyright symbols

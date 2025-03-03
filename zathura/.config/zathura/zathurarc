@@ -7,6 +7,9 @@ set adjust-open width
 set selection-clipboard clipboard
 set sandbox none
 
+set window-title-basename "true"
+set statusbar-home-tilde "true"
+
 # use sqlite as bookmarks database backend
 set database sqlite
 
@@ -28,11 +31,11 @@ set scroll-step 100
 
 #zoom settings
 set zoom-min 10
-set guioptions ""
+set guioptions "sv"  # scroll bar + status bar
 
 # colors
 
-set font "Iosevka 8"
+set font "Iosevka 11"
 set default-bg "#000000" #00
 set default-fg "#F7F7F6" #01
 
@@ -60,7 +63,7 @@ set completion-fg "#E0E0E0" #0C
 set notification-bg "#90A959" #0B
 set notification-fg "#151515" #00
 
-set recolor "true"
+set recolor "false"  # no recolor by default
 set recolor-lightcolor "#000000" #00
 set recolor-darkcolor "#E0E0E0" #06
 set recolor-reverse-video "true"

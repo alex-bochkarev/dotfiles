@@ -5,6 +5,7 @@ fm:/home/*/.cargo
 fm:/home/*/core
 fm:/home/*/.config/discord
 fm:/home/*/.config/skypeforlinux
+fm:/home/*/.config/google-chrome
 fm:/home/*/.dropbox
 fm:/home/*/.dropbox-dist
 fm:/home/*/.emacs.d

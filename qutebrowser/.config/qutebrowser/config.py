@@ -11,6 +11,11 @@ config.bind('<Ctrl-k>', 'completion-item-focus prev', mode='command')
 config.bind(',cr', 'spawn --userscript org-protocol capture br')
 config.bind(',cg', 'spawn --userscript org-protocol capture bg')
 
+# mpv
+# from https://qutebrowser.org/FAQ.html
+config.bind(',m', 'spawn mpv {url}')
+config.bind(',M', 'hint links spawn --detach mpv {hint-url}')
+
 # Simple Zotero integration
 # Bookmarklet source: https://www.zotero.org/download/bookmarklet
 config.bind(',cz', ":spawn --userscript qute-zotero")
@@ -21,7 +26,12 @@ c.aliases.update({"chrom" : "spawn chromium {url}"})
 # aliases for userscripts
 c.aliases.update({"qr" : "spawn --userscript qr"})
 
-c.editor.command = ['emacsclient', '-c', '{}']
+import os
+home = os.environ.get('HOME')
+c.editor.command = ["%s/.local/bin/emacsclient" % home, '-c', '{}']
+
+config.bind(',ec', ':config-edit')
+config.bind(',es', f"spawn {home}/.local/bin/emacsclient {home}/projects/startpage/start.html")
 
 # search engines
 c.url.searchengines["g"] = "https://www.google.com/search?q={}"
