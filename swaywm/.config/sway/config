@@ -24,7 +24,7 @@ font pango:Iosevka Term 9, DejaVu Sans Mono, FontAwesome 8
 
 input * {
     xkb_layout "us,ru"
-    xkb_options "grp:win_space_toggle, caps:hyper, compose:prsc"
+    xkb_options "grp:win_space_toggle, caps:hyper, compose:ralt"
 }
 
 input <identifier> xkb_model "pc101"
