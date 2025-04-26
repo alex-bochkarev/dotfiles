@@ -24,7 +24,7 @@ font pango:Iosevka Term 9, DejaVu Sans Mono, FontAwesome 8
 
 input * {
     xkb_layout "us,ru"
-    xkb_options "grp:win_space_toggle, caps:hyper, compose:prsc"
+    xkb_options "grp:win_space_toggle, caps:hyper, compose:ralt"
 }
 
 input <identifier> xkb_model "pc101"
@@ -70,10 +70,15 @@ bindsym $mod+d exec dmenu_run
 
 bindsym --to-code {
     # changing windows
-    $mod+h exec "~/.local/bin/sway-navigate-emacs left"
-    $mod+j exec "~/.local/bin/sway-navigate-emacs down"
-    $mod+k exec "~/.local/bin/sway-navigate-emacs up"
-    $mod+l exec "~/.local/bin/sway-navigate-emacs right"
+    # $mod+h exec "~/.local/bin/sway-navigate-emacs left"
+    # $mod+j exec "~/.local/bin/sway-navigate-emacs down"
+    # $mod+k exec "~/.local/bin/sway-navigate-emacs up"
+    # $mod+l exec "~/.local/bin/sway-navigate-emacs right"
+
+    $mod+h exec swaymsg focus left
+    $mod+j exec swaymsg focus down
+    $mod+k exec swaymsg focus up
+    $mod+l exec swaymsg focus right
 
     $mod+Left "~/.local/bin/sway-navigate-emacs left"
     $mod+Down "~/.local/bin/sway-navigate-emacs down"
@@ -219,13 +224,12 @@ exec dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSO
 set $WOBSOCK /tmp/wobpipe
 exec rm -f $WOBSOCK && mkfifo $WOBSOCK && tail -f $WOBSOCK | wob
 exec --no-startup-id "eval $(ssh-agent -s)"
-exec --no-startup-id dunst
 exec --no-startup-id syncthing-gtk
 exec --no-startup-id seafile-applet
-exec --no-startup-id element-desktop
 
 # auto-detect and config displays
 exec_always pkill kanshi; exec kanshi
+exec_always pkill dunst; exec --no-startup-id dunst
 
 # keep clipboard after closing a window (see https://wiki.archlinux.org/title/sway)
 exec wl-paste -t text --watch clipman store --no-persist
@@ -237,6 +241,10 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id ~/.local/bin/emacs --daemon
 exec_always --no-startup-id exec setxkbmap -option 'grp:rctrl_toggle,caps:hyper' 'us,us' && sleep 2
 exec_always --no-startup-id exec xmodmap ~/.Xmodmap && sleep 1
+
+# ctrl as esc if pressed alone
+exec_always --no-startup-id xcape
+
 
 # set wallpaper
 output * background ~/.wallpapers/IMG_1490.JPG fill
@@ -308,7 +316,7 @@ bindsym $mod+p exec "~/.local/bin/fuzzy_win_sway ~/.local/bin/fzf-pass.sh"
 # apps
 bindsym $mod+z exec ulauncher-toggle
 bindsym $mod+Shift+z exec emacsclient -nc -a "" -F '((name . "emacs-float") (width . 100) (height . 50))'
-bindsym $mod+b exec firefox
+bindsym $mod+b exec "~/.local/bin/qutebrowser"
 bindsym $mod+t exec google-chrome --new-window --app=https://deepl.com
 
 bindsym $mod+c exec "gnome-terminal -- khal interactive && sleep 1-"

@@ -1,0 +1,11 @@
+#!/bin/env bash
+
+myURL=$(echo "$QUTE_URL" | sed -E 's|^(.+://[^/]+).*|\1|')
+echo "Trying $myURL..."
+
+if curl --head --silent --fail --location --max-redirs 0 "$myURL/humans.txt" 2> /dev/null;
+then
+    echo ":message-info 'Humans detected behind $myURL." >> "$QUTE_FIFO"
+else
+    echo ":message-error 'No humans found behind $myURL.'" >> "$QUTE_FIFO"
+fi

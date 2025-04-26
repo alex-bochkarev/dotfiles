@@ -1,0 +1,6 @@
+#!/bin/env bash
+
+myURL=$(echo "$QUTE_URL" | sed -E 's|^(.+://[^/]+).*|\1|')
+echo "Trying $myURL..."
+
+echo ":open -t $myURL/humans.txt" >> "$QUTE_FIFO"

@@ -16,7 +16,7 @@ alias vim="emacsclient -c -n --alternate-editor=vim"
 # python-specific
 alias venv="source .venv/bin/activate"
 alias venvd="source .venv/bin/deactivate"
-
+alias goconda='eval "$(/home/bochkare/opt/miniforge3/bin/conda shell.zsh hook)"'
 # alias jackin='export TERM=xterm-color; pass -c Clemson/student && ssh abochka@login.palmetto.clemson.edu; export TERM=xterm-termite'
 #alias jackin='pass -c Clemson/student && ssh abochka@login.palmetto.clemson.edu'
 alias jl="julia --color=yes --project=."
