@@ -77,7 +77,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git command-not-found fzf pass ripgrep vi-mode cp colored-man-pages extract pip)
+plugins=(git command-not-found fzf pass vi-mode cp colored-man-pages extract pip debian)
 
 source $ZSH/oh-my-zsh.sh
 
