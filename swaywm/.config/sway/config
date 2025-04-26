@@ -247,7 +247,7 @@ exec_always --no-startup-id xcape
 
 
 # set wallpaper
-output * background ~/.wallpapers/IMG_1490.JPG fill
+exec_always --no-startup-id "~/.local/bin/rnd-wallpaper"
 
 # Start the statusbar
 exec_always --no-startup-id "~/.local/bin/start_waybar"
