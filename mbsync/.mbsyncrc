@@ -328,6 +328,13 @@ Create Both
 Expunge Both
 SyncState *
 
+Channel legacy-gmail-lists
+Far :legacy-gmail-remote:"lists"
+Near :legacy-gmail-local:"lists"
+Create Both
+Expunge Both
+SyncState *
+
 # GROUPS PUT TOGETHER CHANNELS, SO THAT WE CAN INVOKE
 # MBSYNC ON A GROUP TO SYNC ALL CHANNELS
 #
@@ -340,5 +347,6 @@ Channel legacy-gmail-sent
 Channel legacy-gmail-trash
 Channel legacy-gmail-all
 Channel legacy-gmail-starred
+Channel legacy-gmail-lists
 
 # =============== end of Gmail configuration =====================================

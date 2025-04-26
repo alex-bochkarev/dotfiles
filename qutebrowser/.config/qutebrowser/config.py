@@ -25,6 +25,7 @@ config.bind('<ctrl-l>', 'cmd-set-text -s :open')
 config.bind('<alt-l>', 'cmd-set-text -s :open -t')
 
 config.bind('<ctrl-g>', 'mode-leave', mode="normal")
+config.bind('<ctrl-g>', 'mode-leave', mode="command")
 
 config.bind('<Alt-a>', 'tab-prev')
 config.bind('<Alt-e>', 'tab-next')
@@ -68,6 +69,7 @@ c.url.searchengines["amz"] = "https://www.amazon.de/s?k={}"
 c.url.searchengines["lg"] = "https://juliagraphs.org/LightGraphs.jl/latest/search/?q={}"
 c.url.searchengines["r"] = "https://reddit.com/r/{}"
 c.url.searchengines["ve"] = "https://www.verbformen.com/conjugation/?w={}"
+c.url.searchengines["journal"] = "https://www.scimagojr.com/journalsearch.php?q={}"
 
 # "Open" menu map
 # TODO: add "src" to open page source for my website
