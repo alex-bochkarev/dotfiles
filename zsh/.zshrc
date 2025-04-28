@@ -122,3 +122,5 @@ export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${GUROBI_HOME}/lib"
 
 # set up paths
 export PATH="${HOME}/.local/bin:${PATH}"
+
+source ~/.zshrc-local
