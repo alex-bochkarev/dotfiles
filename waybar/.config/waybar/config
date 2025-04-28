@@ -37,7 +37,7 @@
         "format": "<span style=\"italic\">{}</span>"
     },
     "sway/language": {
-        "format": "<span size='14pt'> {flag} {long} </span>",
+        "format": "<span size='14pt'> {flag} {short} </span>",
     },
     "sway/scratchpad": {
         "format": "{icon} {count}",
@@ -85,7 +85,7 @@
     },
    "clock#Home": {
         // "timezone": "America/New_York",
-        "format":"{:<span size='14pt'>📅 %a %d.%m [W %U] -- 🕑 %H:%M </span>}",
+        "format":"<span size='14pt'>📅 {:%a %d.%m [W %U] -- 🕑 %H:%M}</span>",
         "on-click-right":"thunderbird -calendar",
 
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
@@ -93,7 +93,7 @@
     },
    "clock#NY": {
         "timezone": "America/New_York",
-        "format":"{:<span size='10pt'> (%H:%M in NYC, %m/%d)</span>}",
+        "format":"<span size='10pt'> {:(%H:%M in NYC, %m/%d)}</span>",
     },
 
     "cpu": {
@@ -141,7 +141,7 @@
     },
     "disk": {
         "interval": 30,
-        "format": "{specific_free:0.1f} free / {specific_total:0.1f} GB",
+        "format": "{specific_free:0.1f} / {specific_total:0.1f} GB",
         "unit": "GB"
     },
     "pulseaudio": {

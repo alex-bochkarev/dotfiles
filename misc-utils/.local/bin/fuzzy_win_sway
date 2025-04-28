@@ -3,6 +3,7 @@
 # fuzzy_win launches the script from param in a centered window
 xdotool search --onlyvisible --classname FuzzyWindow windowunmap \
   || xdotool search --classname FuzzyWindow windowmap \
-  || gnome-terminal -t FuzzyWindow --hide-menubar -e $1
+  || alacritty -t FuzzyWindow -e $1
+#  || alacritty -t FuzzyWindow --hide-menubar -e $1
 
 # note: it was with --geometry 50x25+625+100 

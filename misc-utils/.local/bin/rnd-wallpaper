@@ -1,0 +1,5 @@
+#!/bin/env bash
+
+pic=$(find ~/.wallpapers/ -type f -exec file --mime-type {} \+ | awk -F: '{if ($2 ~/image\//) print $1}' | shuf -n 1)
+echo "pic=$pic"
+swaymsg "output * background $pic fill"

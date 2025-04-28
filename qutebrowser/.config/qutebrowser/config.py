@@ -77,7 +77,7 @@ c.url.searchengines["journal"] = "https://www.scimagojr.com/journalsearch.php?q=
 config.bind(',oh', "spawn --userscript find-humans")
 config.bind(',oH', "spawn --userscript open-humans")
 
-c.url.start_pages = ["file:///home/bochkare/projects/startpage/start.html"]
+c.url.start_pages = [f"file:///{home}/projects/startpage/start.html"]
 
 # Re: fprinting, https://wiki.archlinux.org/title/Qutebrowser#Minimize_fingerprinting
 

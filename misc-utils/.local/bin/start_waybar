@@ -1,4 +1,5 @@
 #!/bin/env bash
 
 killall waybar
+export GTK_USE_PORTAL=0
 ~/opt/Waybar/build/waybar
