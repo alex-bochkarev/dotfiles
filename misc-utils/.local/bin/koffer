@@ -148,6 +148,8 @@ koffer_do_unpack(){
 case "$1" in
     pack) koffer_do_pack ;;
     unpack) koffer_do_unpack ;;
+    open) koffer_mount ;;
+    close) koffer_unmount ;;
     *) koffer_show_help ;;
 esac
 
