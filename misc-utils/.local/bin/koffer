@@ -89,15 +89,45 @@ koffer_gitpush(){
     fi
 }
 
+koffer_gitpull(){
+    local INFOSTRING=$1
+    local DESTDIR=$2
+    local DESTBRANCH=$3
+
+    echo -e "${INFO} Unpacking: $INFOSTRING..."
+    cd "$DESTDIR"
+    git fetch $REMOTENAME
+
+    if [ -n "$(git status --porcelain)" ]; then
+        git pull $REMOTENAME $DESTBRANCH
+        echo -e "${INFO} ✓ done ($INFOSTRING)"
+    else
+        echo -e "${INFO} No changes to pull.";
+    fi
+}
+
 koffer_pushpass(){
     echo -e "${INFO} Packing the pass repo..."
     cd ~/.password-store
 
+    git fetch $REMOTENAME
     if [ -n "$(pass git status --porcelain)" ]; then
         pass git push -u --all && echo -e "${INFO} ✓ done."
         echo -e "${INFO} ✓ done (password store)"
     else
         echo -e "${INFO} No changes to commit.";
+    fi
+}
+
+koffer_pullpass(){
+    echo -e "${INFO} Unpacking the pass repo..."
+    cd ~/.password-store
+
+    git fetch $REMOTENAME
+    if [ -n "$(pass git status --porcelain)" ]; then
+        pass git pull && echo -e "${INFO} ✓ done (password store)"
+    else
+        echo -e "${INFO} No changes to pull (password store)";
     fi
 }
 
@@ -119,25 +149,20 @@ koffer_do_pack(){
 }
 
 koffer_do_unpack(){
-    echo -e "${ERR}: NOT IMPLEMENTED!"
-    exit 1
+    koffer_mount
+    REMOTENAME=$(jq -r ".remotename" $SETUPFILE)
 
-    # koffer_check_dir
-    # echo -e "${INFO} Unpacking the PKB notes..."
-    # cd ~/PKB/notes
-    # git pull stick master
-    # echo -e "${INFO} ✓ done"
+    if [ -z "$REMOTENAME" ]; then
+        echo -e "${ERR} Remote name not found in $SETUPFILE."
+        exit 1
+    fi
 
-    # echo -e "${INFO} Unpacking the email stuff..."
-    # cd ~/PKB/email
-    # git pull stick main
-    # echo -e "${INFO} ✓ done."
+    koffer_gitpull "PKB notes" "$HOME/PKB/notes" "master"
+    koffer_gitpull "email notes" "$HOME/PKB/email" "main"
+    koffer_gitpull "org files" "$HOME/org" "main"
+    koffer_pullpass
 
-    # echo -e "${INFO} Unpacking the pass repo..."
-    # cd ~/.password-store
-    # pass git pull stick master && echo -e "${INFO} ✓ done. Unmounting..."
-
-    # koffer_unmount
+    koffer_unmount
 }
 
 DEVICEUUID=$(jq -r ".UUID.device" $SETUPFILE)
