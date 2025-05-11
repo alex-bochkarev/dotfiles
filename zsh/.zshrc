@@ -112,9 +112,6 @@ source $HOME/.config/zsh_aliases
 source /usr/share/doc/fzf/examples/key-bindings.zsh
 source /usr/share/doc/fzf/examples/completion.zsh
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 # set up gurobi
 export GUROBI_HOME="$HOME/opt/gurobi950/linux64"
 export PATH="${PATH}:${GUROBI_HOME}/bin"
@@ -124,3 +121,6 @@ export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${GUROBI_HOME}/lib"
 export PATH="${HOME}/.local/bin:${PATH}"
 
 source ~/.zshrc-local
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

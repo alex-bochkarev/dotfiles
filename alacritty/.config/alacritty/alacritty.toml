@@ -41,4 +41,16 @@ y = 5
 [colors]
 draw_bold_text_with_bright_colors = false
 
+[colors.hints.start]
+foreground            = "#FFFFFF"
+background            = "#FF0000"
+
+[colors.hints.end]
+foreground            = "#FFFF00"
+
 [keyboard]
+
+[[hints.enabled]]
+regex = "[a-zA-Z/\\-_\\.]+(:\\d+)(:\\d*)?"
+command = { program = "/home/bochkare/.local/bin/openline"}
+mouse = { enabled = true }
