@@ -24,11 +24,6 @@ koffer_show_help(){
 }
 
 koffer_mount(){
-    DEVICEUUID=$(jq -r ".UUID.device" $SETUPFILE)
-    PARTUUID=$(jq -r ".UUID.partition" $SETUPFILE)
-    DEVICE=$(/sbin/blkid -U $DEVICEUUID)
-    PACKDIR=$(lsblk -o UUID,MOUNTPOINT | awk -v u="$PARTUUID" '$1 == u {print $2}')
-
     if [ ! -d "$PACKDIR" ]; then
         echo -e "${INFO} The device is not mounted. Trying to mount..."
         echo -e "${INFO} ∟ unlocking the drive ($DEVICE)..."
@@ -145,9 +140,16 @@ koffer_do_unpack(){
     # koffer_unmount
 }
 
+DEVICEUUID=$(jq -r ".UUID.device" $SETUPFILE)
+PARTUUID=$(jq -r ".UUID.partition" $SETUPFILE)
+DEVICE=$(/sbin/blkid -U $DEVICEUUID)
+PACKDIR=$(lsblk -o UUID,MOUNTPOINT | awk -v u="$PARTUUID" '$1 == u {print $2}')
+
 case "$1" in
     pack) koffer_do_pack ;;
     unpack) koffer_do_unpack ;;
+    open) koffer_mount ;;
+    close) koffer_unmount ;;
     *) koffer_show_help ;;
 esac
 
