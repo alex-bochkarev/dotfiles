@@ -98,6 +98,8 @@ koffer_gitpull(){
     cd "$DESTDIR"
     git fetch $REMOTENAME
 
+    # FIXME: this does not handle the situation when working tree
+    #        is clean, but the local branch is ahead.
     if [ -n "$(git status --porcelain)" ]; then
         git pull $REMOTENAME $DESTBRANCH
         echo -e "${INFO} ✓ done ($INFOSTRING)"
