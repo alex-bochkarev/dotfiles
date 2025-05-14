@@ -3,7 +3,7 @@
 
 # Debian-specific
 alias auu='sudo apt update && sudo apt upgrade'
-alias aguu="sudo apt update && sudo apt upgrade && flatpak update && which snap > /dev/null && sudo snap refresh"
+alias aguu="sudo apt update && sudo apt upgrade && sudo flatpak update && which snap > /dev/null && sudo snap refresh"
 alias agi='sudo apt install'
 
 # open stuff with a default app
