@@ -11,6 +11,9 @@ COLOFF='\033[0m'
 ERR="${RED}ERROR:${COLOFF}"
 INFO="${GREEN}INFO:${COLOFF}"
 
+# TODO: add commands
+# - status
+# - add
 koffer_show_help(){
     echo -e "USAGE: $(basename $0) {pack | unpack | help}"
     echo "A utility to pack the necessities to make moving between machines"
@@ -70,6 +73,11 @@ koffer_unmount(){
     echo -e "${INFO} ✓ Unmounted and locked, safe to remove."
 }
 
+# TODO: refactor and pull out:
+#  - check_and_commit
+#  - check_and_pull
+#  - check_and_push
+# TODO: consider edge cases (no remote set, detached head state)
 koffer_gitpush(){
     local INFOSTRING=$1
     local SRCDIR=$2
@@ -77,16 +85,35 @@ koffer_gitpush(){
 
     echo -e "${INFO} Packing: $INFOSTRING..."
     cd "$SRCDIR"
+    echo -e "${INFO} ∟ Fetching the remote ($REMOTENAME)..."
     git fetch $REMOTENAME
 
     if [ -n "$(git status --porcelain)" ]; then
+        echo -e "${INFO} ∟ checking for uncommitted changes... ($INFOSTRING)"
         git add .
         git commit -m "Saving the info from $(hostname) at $(date '+%Y-%m-%d')"
-        git push $REMOTENAME $SRCBRANCH
-        echo -e "${INFO} ✓ done ($INFOSTRING)"
     else
-        echo -e "${INFO} No changes to commit.";
+        echo -e "${INFO} ∟ No changes to commit.";
     fi
+
+    current_branch=$(git rev-parse --abbrev-ref HEAD)
+    behind=$(git rev-list --count HEAD..origin/$current_branch 2>/dev/null)
+    if [ "$behind" -gt 0 ]; then
+        echo -e "${INFO} ∟ Local branch ($current_branch) is behind the remote by $behind commit(s). Rebasing..."
+        git pull --rebase $REMOTENAME $SRCBRANCH
+    else
+        echo -e "${INFO} ∟ Local branch is not behind the remote."
+    fi
+
+    ahead=$(git rev-list --count origin/$current_branch..HEAD 2>/dev/null)
+    if [ "$ahead" -gt 0 ]; then
+        echo -e "${INFO} ∟ Local branch is ahead of remote by $ahead commit(s). Pushing..."
+        git push $REMOTENAME $SRCBRANCH
+    else
+        echo -e "${INFO} ∟ Local branch is not ahead of remote."
+    fi
+
+    echo -e "${INFO} ✓ packing done ($INFOSTRING)"
 }
 
 koffer_gitpull(){
