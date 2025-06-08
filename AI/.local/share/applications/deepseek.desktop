@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=DeepSeek
+Exec=bash -c "$HOME/.local/bin/isolated-website.sh deepseek https://chat.deepseek.com"
+Type=Application
+Terminal=false
+Categories=Internet;
+X-GNOME-SingleWindow=true
