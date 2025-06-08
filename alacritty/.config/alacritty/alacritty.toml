@@ -51,6 +51,6 @@ foreground            = "#FFFF00"
 [keyboard]
 
 [[hints.enabled]]
-regex = "[a-zA-Z/\\-_\\.]+(:\\d+)(:\\d*)?"
+regex = "[a-zA-Z0-9/\\-_\\.]+(:\\d+)(:\\d*)?"
 command = { program = "/home/bochkare/.local/bin/openline"}
 mouse = { enabled = true }

@@ -33,3 +33,8 @@
 	colorMoved = default
 [credential]
 	helper = cache
+[safe]
+	directory = /media/bochkare/QuickStick/org
+	directory = /media/bochkare/QuickStick/PKB/notes
+	directory = /media/bochkare/QuickStick/PKB/email
+	directory = /media/bochkare/QuickStick/.pass-repo
