@@ -45,7 +45,8 @@ config.bind('<ctrl-h>', 'help')
 # Bookmarklet source: https://www.zotero.org/download/bookmarklet
 config.bind(',cz', ":spawn --userscript qute-zotero")
 
-c.aliases.update({"ff" : "spawn librewolf {url}"})
+c.aliases.update({"lw" : "spawn --detach librewolf {url}"})
+c.aliases.update({"ff" : "spawn --detach firefox {url}"})
 c.aliases.update({"chrom" : "spawn chromium {url}"})
 
 # aliases for userscripts
