@@ -87,3 +87,7 @@ c.content.headers.accept_language = "en-US,en;q=0.5"
 c.content.headers.custom = {"accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"}
 c.content.canvas_reading = False
 c.content.geolocation = False
+
+# Per-website configs
+config.set("input.mode_override", "passthrough", "overleaf.com")
+config.set("input.mode_override", "passthrough", "sharelatex.rz.rptu.de")

@@ -118,7 +118,7 @@ export PATH="${PATH}:${GUROBI_HOME}/bin"
 export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${GUROBI_HOME}/lib"
 
 # set up paths
-export PATH="${HOME}/.local/bin:${PATH}"
+export PATH="${HOME}/.local/bin:$HOME/.cargo/bin:${PATH}"
 
 source ~/.zshrc-local
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
