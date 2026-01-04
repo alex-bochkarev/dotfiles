@@ -279,7 +279,6 @@ bindsym $mod+bracketright move workspace to output right
 # aux commands
 bindsym $mod+u exec "~/.local/bin/rofimoji -f emojis math arrows ~/.config/rofimoji/data/favorites"
 bindsym $mod+g exec "~/.local/bin/fuzzy_win ~/.local/bin/fzf-go.sh"
-bindsym $mod+y exec "~/.local/bin/fuzzy_win ~/.local/bin/fzf-go-emacs.sh"
 bindsym $mod+apostrophe exec "flameshot gui"
 bindsym $mod+m exec i3-sensible-terminal -T FloatingTerm -e "ncmpcpp"
 bindsym $mod+n exec ~/opt/emacs/bin/emacsclient -cF '((name . "emacs-float") (width . 70) (height . 25))' -e '(spacemacs/deft)'

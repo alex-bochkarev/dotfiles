@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Grok AI
+Exec=bash -c "$HOME/.local/bin/isolated-website.sh chromium ch-grok https://grok.com"
+Type=Application
+Terminal=false
+Categories=Internet;
+X-GNOME-SingleWindow=true

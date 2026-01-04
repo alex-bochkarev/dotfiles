@@ -3,20 +3,6 @@
 #+STARTUP: show2levels
 
 * Current project TODOs
-** koffer TODOs
-- [ ] careful checking of the git repo status:
-  + =git status -sb= shows both behind/ahead and new files!
-- [ ] implement =unpack=
-- [ ] maybe make proper =json= config for packing targets
-  and =koffer add | list | remove= functionality
-
-  perhaps, it will be easier to rewrite the stuff in python?
-- [ ] also, checking the git repo permissions might be especially nice...
-     or at least the instructions.
-
-     See:
-     - https://stackoverflow.com/questions/17719829/check-if-local-git-repo-is-ahead-behind-remote
-
 ** TODO Describe multi-key setup
 [2023-06-01 Do 12:23]
 ** TODO Add org-protocol setup!

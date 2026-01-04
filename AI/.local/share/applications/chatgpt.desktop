@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=ChatGPT AI
+Exec=bash -c "$HOME/.local/bin/isolated-website.sh chromium ch-chatgpt https://chat.openai.com/chat"
+Type=Application
+Terminal=false
+Categories=Internet;
+X-GNOME-SingleWindow=true

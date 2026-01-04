@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=DeepSeek
+Name=DeepSeek AI
 Exec=bash -c "$HOME/.local/bin/isolated-website.sh qute qute-deepseek https://chat.deepseek.com"
 Type=Application
 Terminal=false
