@@ -54,7 +54,7 @@ c.aliases.update({"qr" : "spawn --userscript qr"})
 
 import os
 home = os.environ.get('HOME')
-c.editor.command = ["%s/.local/bin/emacsclient" % home, '-c', '{}']
+c.editor.command = ["emacsclient", '-c', '{}']
 
 config.bind(',ec', ':config-edit')
 config.bind(',es', f"spawn {home}/.local/bin/emacsclient {home}/projects/startpage/start.html")
@@ -71,6 +71,7 @@ c.url.searchengines["lg"] = "https://juliagraphs.org/LightGraphs.jl/latest/searc
 c.url.searchengines["r"] = "https://reddit.com/r/{}"
 c.url.searchengines["ve"] = "https://www.verbformen.com/conjugation/?w={}"
 c.url.searchengines["journal"] = "https://www.scimagojr.com/journalsearch.php?q={}"
+c.url.searchengines["arch"] = "https://wiki.archlinux.org/index.php?search={}"
 
 # "Open" menu map
 # TODO: add "src" to open page source for my website

@@ -1,68 +1,35 @@
+[theme]
 theme = "gruvbox-dark"
-icons = "awesome"
+
+[icons]
+icons = "awesome6"
 
 [[block]]
-block = "disk_space"
-path = "/"
-alias = "/"
-info_type = "available"
-format ="{icon} F{available}/T{total}"
-unit = "GB"
-interval = 20
-warning = 20.0
-alert = 10.0
+block = "focused_window"
+format = "$title.str(max_w:60)"
 
 [[block]]
-block = "memory"
-display_type = "memory"
-format_mem = "{mem_used_percents}/{mem_total}"
-format_swap = "{swap_used_percents}/{swap_total}"
-
-[[block]]
-block = "cpu"
-format = "{utilization}{barchart}"
-interval = 1
-
-[[block]]
-block = "custom"
-command = "mpc status | grep -q playing && echo ⏸️ || echo ▶️"
-on_click = "mpc toggle"
-interval = 1
-
-[[block]]
-block = "temperature"
-collapsed = false
-interval = 10
-chip = "coretemp-isa-0000"
-format = "{max}"
-inputs = ["Core 0", "Core 1"]
+block = "keyboard_layout"
+driver = "xkbevent"
+format = " [ $layout ] "
 
 [[block]]
 block = "time"
 interval = 30
-format = "%Y-%m-%d %a | %H:%M"
-on_click = "gsimplecal"
+format = "$icon $timestamp.datetime(f:'%Y-%m-%d %a | %H:%M')"
 
-[[block]]
-block = "time"
-interval = 60
-format = "MOW %H:%M"
-timezone = "Europe/Moscow"
-
-[[block]]
-block = "time"
-interval = 60
-format = "NY %H:%M"
-timezone = "America/New_York"
+[[block.click]]
+button = "left"
+cmd = "gsimplecal"
 
 [[block]]
 block = "backlight"
 invert_icons = true
 
-# [[block]]
-# block = "battery"
-# interval = 10
-# format = "{percentage} {time}"
+[[block]]
+block = "battery"
+interval = 10
+format = "$icon $percentage $time_remaining"
 
 ## re:toggle, from https://github.com/greshake/i3status-rust/issues/669#issuecomment-628720874
 ## command_state has to print something out to mean "on"
@@ -79,4 +46,9 @@ invert_icons = true
 
 [[block]]
 block = "sound"
-on_click="pavucontrol"
+driver = "pulseaudio"
+
+[[block]]
+block = "sound"
+driver = "pulseaudio"
+device_kind = "source"

@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=WhatsApp (DE -- German number)
+Exec=bash -c "$HOME/.local/bin/isolated-website.sh chromium whatsapp-de https://web.whatsapp.com"
+Type=Application
+Terminal=false
+Categories=Internet;
+X-GNOME-SingleWindow=true

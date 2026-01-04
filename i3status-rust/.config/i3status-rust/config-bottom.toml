@@ -1,0 +1,44 @@
+[theme]
+theme = "gruvbox-dark"
+
+[icons]
+icons = "awesome6"
+
+[[block]]
+block = "disk_space"
+path = "/"
+info_type = "available"
+format =" $icon $available "
+alert_unit = "GB"
+interval = 20
+warning = 20.0
+alert = 10.0
+
+[[block]]
+block = "memory"
+format = "$icon $mem_free.eng(prefix:Mi) "
+
+[[block]]
+block = "memory"
+format = "$icon swapped: $swap_used.eng(prefix:Mi) "
+
+[[block]]
+block = "cpu"
+format = "$icon $utilization $barchart"
+interval = 1
+
+[[block]]
+block = "temperature"
+interval = 10
+chip = "*-isa-*"
+format = "$icon $max max"
+
+[[block]]
+block = "net"
+format = "$icon $speed_down down / $speed_up up $ip"
+
+[[block]]
+block = "uptime"
+format = " $icon $uptime "
+interval = 3600
+
